@@ -1,0 +1,9 @@
+# Image files
+*.eps
+*.jpg
+*.jpeg
+*.png
+
+# Folders
+Equation/
+image_to_eps/
