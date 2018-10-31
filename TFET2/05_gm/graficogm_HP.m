@@ -148,5 +148,7 @@ ylabel('d(gm)/dx')
 legend({'VBG = 1.0 V','VBG = 0.6V','VBG = 0.2V','VBG = 0.0V','VBG = -0.2V','VBG = -0.6V','VBG = -1.0V'}, 'Location', 'northeast');
 legend('boxoff')
 
+% res
+% 0.0200    0.0400    0.0500    0.0600    0.0700    0.1400    0.2500
 
-print('dgm_HP', '-depsc');
+%print('dgm_HP', '-depsc');

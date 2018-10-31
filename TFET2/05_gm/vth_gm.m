@@ -1,5 +1,6 @@
 clear;
 close all; 
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
 % Figure settings for publications %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
@@ -43,54 +44,33 @@ map = [0, 0, 1
     0.25, 0.25, 0.25
 	0, 0, 1];
 
+	
 
-addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\04_FE\var_vds05
-
+	
 %%
 %%%Read data and store it in a struct
-op2 = [];	
-%aux = 2
-%%%%%%%%%
+op2 = [];		
 
-op2 =  rdcelpa('var_vds05_dd_iv.elpa','*',[],op2);
-
-
+vbg = [1.0 0.6 0.2 0 -0.2 -0.6 -1.0];
+vth_hp = [0.0200    0.0400    0.0500    0.0600    0.0700    0.1400    0.2500]; 
 
 %%
 %%%Visualize data stored in a struct 
 %%%Data is accessed via names of the struct elements
 %%%Simple preprocessing of data can be done
 
-op2(1).I_d = abs(op2(1).I_d);
-%op2(2).I_d = abs(op2(2).I_d);
-%op2(3).I_d = abs(op2(3).I_d);
-%op2(4).I_d = abs(op2(4).I_d);
-
 
 figure
-h(1) = semilogy(op2(1).V_gs,op2(1).I_d );
+h(1) = plot(vbg,vth_hp, '+');
+xlabel('V_{\rm BG} (V)')
+ylabel('V_{\rm th} (V)')
 
-xlabel('V_{PG} (V)')
-ylabel('I_{d} (A)')
+axis([-1.1 1.1 0 0.3]);
 
-%axis([0 0.8 1E-21 1e-5])
-%ay = gca;
-%ay.YTick = [1e-12 1e-11 1e-10 1e-9 1e-8 1e-7 1e-6 1e-5];
-
-%hold; 
-%h(2) = semilogy(op2(2).V_g,op2(2).I_d);
-%h(3) = semilogy(op2(3).V_g,op2(3).I_d);
-%h(4) = semilogy(op2(4).V_g,op2(4).I_d);
-
-h(1).Color = map(1,:);
-%h(2).Color = map(2,:);
-%h(3).Color = map(1,:);
-%h(4).Color = map(2,:);
+%h(1).Color = map(1,:);
 
 
+%legend({'VBG = 1.0 V','VBG = 0.6V','VBG = 0.2V','VBG = 0.0V','VBG = -0.2V','VBG = -0.6V','VBG = -1.0V'}, 'Location', 'northeast');
+%legend('boxoff')
 
-%legend({'nHP','nLP'}, 'Location', 'best');
-legend({'Vg = 1V, Vbg = 0V'});
-legend('boxoff')
-
-print('var_GS', '-depsc');
+print('vth_HP', '-depsc');
