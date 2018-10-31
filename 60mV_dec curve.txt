@@ -1,0 +1,12 @@
+%%60mV/dec curve
+I0 = 8.64549235600000e-09;
+%Id = I0 * exp(Vgs/0.026);
+Id = I0 * exp(op7(2).G ./0.026);
+
+h(5) = semilogy(op7(2).G,Id );      
+h(5).Color = 'k';
+h(5).LineStyle = '--';
+
+annotation('textbox','String','SS = 60mV/dec','Interpreter','tex',...
+    'FontSize', 14, 'LineStyle', 'none', 'Position', [0.35 0.72 0.149 0.07037]...
+    ,'FitBoxToText','on');

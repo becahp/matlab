@@ -1,0 +1,26 @@
+h(2) = semilogy(op2(1).G(op2(1).n_iter>0) ,op2(1).Isum(op2(1).n_iter>0) );
+h(3) = semilogy(op2(2).G(op2(2).n_iter>0) ,op2(2).Isum(op2(2).n_iter>0) );
+h(4) = semilogy(op2(3).G(op2(3).n_iter>0) ,op2(3).Isum(op2(3).n_iter>0) );
+h(5) = semilogy(op2(4).G(op2(4).n_iter>0) ,op2(4).Isum(op2(4).n_iter>0) );
+h(6) = semilogy(op2(5).G(op2(5).n_iter>0) ,op2(5).Isum(op2(5).n_iter>0) );
+h(7) = semilogy(op2(6).G(op2(6).n_iter>0) ,op2(6).Isum(op2(6).n_iter>0) );
+h(8) = semilogy(op2(7).G(op2(7).n_iter>0) ,op2(7).Isum(op2(7).n_iter>0) );
+h(9) = semilogy(op2(8).G(op2(8).n_iter>0) ,op2(8).Isum(op2(8).n_iter>0) );
+
+h(10) = semilogy(op2(9).G(op2(9).n_iter>0),op2(9).Isum(op2(9).n_iter>0) );
+h(11) = semilogy(op2(10).G(op2(10).n_iter>0),op2(10).Isum(op2(10).n_iter>0) );
+
+
+%%%%%%%%%%%%%%%coos v30
+
+h(2) = semilogy(op2(1).V_g(op2(1).n_iter>0) ,op2(1).I_s(op2(1).n_iter>0) );
+h(3) = semilogy(op2(2).V_g(op2(2).n_iter>0) ,op2(2).I_s(op2(2).n_iter>0) );
+h(4) = semilogy(op2(3).V_g(op2(3).n_iter>0) ,op2(3).I_s(op2(3).n_iter>0) );
+h(5) = semilogy(op2(4).V_g(op2(4).n_iter>0) ,op2(4).I_s(op2(4).n_iter>0) );
+h(6) = semilogy(op2(5).V_g(op2(5).n_iter>0) ,op2(5).I_s(op2(5).n_iter>0) );
+h(7) = semilogy(op2(6).V_g(op2(6).n_iter>0) ,op2(6).I_s(op2(6).n_iter>0) );
+h(8) = semilogy(op2(7).V_g(op2(7).n_iter>0) ,op2(7).I_s(op2(7).n_iter>0) );
+h(9) = semilogy(op2(8).V_g(op2(8).n_iter>0) ,op2(8).I_s(op2(8).n_iter>0) );
+
+h(10) = semilogy(op2(9).V_g(op2(9).n_iter>0),op2(9).I_s(op2(9).n_iter>0) );
+h(11) = semilogy(op2(10).V_g(op2(10).n_iter>0),op2(10).I_s(op2(10).n_iter>0) );

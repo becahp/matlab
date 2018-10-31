@@ -1,0 +1,21 @@
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\_06\06_meff\3g
+
+op1 = [];
+
+op1 = rdcelpa('n_esq_3g_meff_01_op23_dd_inqu.elpa','*',[],op1);
+ 
+op1(1).x = op1(1).x * 10^9;
+op1(1).jn = abs(op1(1).jn);
+op1(1).jn_therm = abs(op1(1).jn_therm);
+op1(1).jn_diff = abs(op1(1).jn_diff);
+op1(1).jn_drift = abs(op1(1).jn_drift);
+op1(1).jn_tun = abs(op1(1).jn_tun);
+
+figure
+h(1) = semilogy(op1(1).x,op1(1).jn );
+hold
+h(2) = semilogy(op1(1).x,op1(1).jn_tun );
+h(3) = semilogy(op1(1).x,op1(1).jn_therm);
+
+legend([h(1) h(2) h(3)],...
+    {'jn', 'jn_{tun}','jn_{therm}'},'Location', 'best'); 

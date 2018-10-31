@@ -1,0 +1,28 @@
+A = [];
+a = [];
+fl = [];
+
+i = 1;
+[A(i),a(i),fl(i)] = readELPA('nLP_PGS_08/nLP_PGS_08_op81_dd_inqu.elpa'); %0.0V 
+[A(i+1),a(i+1),fl(i+1)] = readELPA('nHP_PGS_08/nHP_PGS_08_op81_dd_inqu.elpa'); %0.0V 
+
+(i+1)
+
+
+
+[A,a,fl] = readELPA('nLP_PGS_08/nLP_PGS_08_op81_dd_inqu.elpa'); %0.0V 
+[A,a,fl] = readELPA('nHP_PGS_08/nHP_PGS_08_op81_dd_inqu.elpa'); %0.0V 
+
+
+field1 = 'A';  value1 = A;
+field2 = 'a';  value2 = {a};
+field3 = 'fl';  value3 = fl;
+
+s = struct(field1,value1,field2,value2,field3,value3)
+
+grande = struct('1', s)
+
+[s.A,s.a,s.fl] = readELPA('nLP_PGS_08/nLP_PGS_08_op81_dd_inqu.elpa'); %0.0V 
+
+[grande.a.A, grande.a.a,grande.a.fl] = readELPA('nLP_PGS_08/nLP_PGS_08_op81_dd_inqu.elpa'); %0.0V 
+

@@ -1,0 +1,5 @@
+elp.mat=[x,cb1, qfn, vb1, qfp];
+elp.var_names={'x','cb1','qfn','vb1','qfp'};
+elp.title='b_3g_10V_10V';
+save_elpa(['Data/',elp.title,'.elpa'],elp)
+

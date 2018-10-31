@@ -1,0 +1,128 @@
+op2 = [];
+
+op2 = rdcelpa('re/n_2g_meff_004_dd_iv.elpa','*',[],op2); % 1
+op2 = rdcelpa('re/n_2g_meff_004_dd_iv.elpa','*',[],op2); % 1
+
+op2(1).V_d = op2(1).V_d(1:34);
+op2(1).I_d = op2(1).I_d(1:34);
+
+op2(2).V_d = op2(2).V_d(42:end);
+op2(2).I_d = op2(2).I_d(42:end);
+
+
+x1 = op2(1).V_d(34);
+y1 = op2(1).I_d(34);
+
+x2 = op2(2).V_d(1);
+y2 = op2(2).I_d(1);
+	
+p = polyfit([x1, x2], [y1, y2], 1);
+%a = p(1);
+%b = p(2);	
+	
+x= linspace(x1,x2, 10); % Adapt n for resolution of graph
+f1 = polyval(p, x);
+
+op2(3) = op2(2);
+
+op2(2).V_d = x;
+op2(2).I_d = f1;
+
+
+for i=1:length(op2)
+	clear indice;
+	indice = find(op2(i).V_d>=0.6,1);
+
+	if indice == 1
+		op2(i).V_d = wrev(op2(i).V_d);
+		op2(i).I_d = wrev(op2(i).I_d);
+		
+		%indice(i) = find(op2(i).V_d>=1.5,1);
+	end
+end
+
+
+
+figure
+%h(1) = semilogy(tres(:,1),tres(:,2));
+h(1) = plot(op2(1).V_d,op2(1).I_d );
+hold on
+axis([0 0.6 0 1e-5])
+xlabel('V_{ds} (V)')
+ylabel('I_{ds} (A)')
+grid on
+h(2) = plot(op2(2).V_d,op2(2).I_d );
+plot(x,f1,'k--');
+
+%line([op2(1).V_d(34) op2(2).V_d(1)],[op2(1).I_d(34) op2(2).I_d(1)],'LineStyle','--')
+
+[op3.V_d,op3.I_d] = unir_op(op2);
+
+plot(op3(1).V_d,op3(1).I_d );
+
+elp.mat=[op3(1).V_d', op3(1).I_d'];
+elp.var_names={'V_d','I_d'};
+elp.title='n_2g_meff_004_dd_iv';
+save_elpa(['save_elpa/',elp.title,'.elpa'],elp)
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+op2 =[];
+op2 = rdcelpa('2G/n_2g_meff_01_dd_iv.elpa','*',[],op2);  % 2
+op2 = rdcelpa('re/n_2g_meff_01_dd_iv.elpa','*',[],op2);  % 2
+%op2 = rdcelpa('2G/old_n_2g_meff_01_dd_iv.elpa','*',[],op2);  % 2
+
+op2(1).V_d = op2(1).V_d(1:19); %0.257142857100000
+op2(1).I_d = op2(1).I_d(1:19);
+
+op2(2).V_d = op2(2).V_d(1:32);
+op2(2).I_d = op2(2).I_d(1:32);
+
+figure
+%h(1) = semilogy(tres(:,1),tres(:,2));
+h(1) = plot(op2(1).V_d,op2(1).I_d );
+hold on
+axis([0 0.6 0 1e-5])
+xlabel('V_{ds} (V)')
+ylabel('I_{ds} (A)')
+grid on
+h(2) = plot(op2(2).V_d,op2(2).I_d );
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+op2=[];
+op2 = rdcelpa('2G/n_2g_meff_004_dd_iv.elpa','*',[],op2);  % 2
+op2 = rdcelpa('2G/n_2g_meff_01_dd_iv.elpa','*',[],op2);  % 2
+op2 = rdcelpa('2G/n_2g_meff_02_dd_iv.elpa','*',[],op2);	 % 3
+op2 = rdcelpa('2G/n_2g_meff_03_dd_iv.elpa','*',[],op2);  % 4
+op2 = rdcelpa('2G/n_2g_meff_04_dd_iv.elpa','*',[],op2);  % 5 smooth 
+op2 = rdcelpa('2G/n_2g_meff_05_dd_iv.elpa','*',[],op2);  % 6
+op2 = rdcelpa('2G/n_2g_meff_06_dd_iv.elpa','*',[],op2);  % 7 tá ok
+op2 = rdcelpa('2G/n_2g_meff_07_dd_iv.elpa','*',[],op2);  % 8
+op2 = rdcelpa('2G/n_2g_meff_08_dd_iv.elpa','*',[],op2);  % 9
+op2 = rdcelpa('2G/n_2g_meff_09_dd_iv.elpa','*',[],op2);  % 10 tá ok
+op2 = rdcelpa('2G/n_2g_meff_10_dd_iv.elpa','*',[],op2);  % 11 tá ok
+
+op2(3).I_d = smooth(op2(3).I_d);
+op2(5).I_d = smooth(op2(5).I_d);
+
+
+figure
+%h(1) = semilogy(tres(:,1),tres(:,2));
+h(1) = plot(op2(1).V_d,op2(1).I_d );
+hold on
+axis([0 0.6 0 1e-5])
+xlabel('V_{ds} (V)')
+ylabel('I_{ds} (A)')
+grid on
+h(2) = plot(op2(2).V_d,op2(2).I_d );
+h(3) = plot(op2(3).V_d,op2(3).I_d );
+h(4) = plot(op2(4).V_d,op2(4).I_d );
+h(5) = plot(op2(5).V_d,op2(5).I_d );      
+h(6) = plot(op2(6).V_d,op2(6).I_d );      
+h(7) = plot(op2(7).V_d,op2(7).I_d );      
+h(8) = plot(op2(8).V_d,op2(8).I_d );
+h(9) = plot(op2(9).V_d,op2(9).I_d );
+h(10) = plot(op2(10).V_d,op2(10).I_d );
+h(11) = plot(op2(11).V_d,op2(11).I_d );

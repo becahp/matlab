@@ -1,0 +1,59 @@
+op2 = [];
+
+op2 = rdcelpa('FBG/n_fbg_meff_08_dd_iv.elpa','*',[],op2);  % 9
+
+op2(1).V_d = op2(1).V_d(1:45);
+op2(1).I_d = op2(1).I_d(1:45);
+
+
+op2 = [];
+
+op2 = rdcelpa('FBG/n_fbg_meff_004_dd_iv.elpa','*',[],op2); % 1
+op2 = rdcelpa('re/n_fbg_meff_004_dd_iv.elpa','*',[],op2); % 1
+
+
+figure
+%h(1) = semilogy(tres(:,1),tres(:,2));
+h(1) = plot(op2(1).V_d,op2(1).I_d );
+hold on
+axis([0 0.6 0 1e-5])
+xlabel('V_{ds} (V)')
+ylabel('I_{ds} (A)')
+grid on
+h(2) = plot(op2(2).V_d,op2(2).I_d );
+
+
+
+op2 = [];
+
+op2 = rdcelpa('FBG/n_fbg_meff_004_dd_iv.elpa','*',[],op2); % 1
+op2 = rdcelpa('FBG/n_fbg_meff_01_dd_iv.elpa','*',[],op2);  % 2
+op2 = rdcelpa('FBG/n_fbg_meff_02_dd_iv.elpa','*',[],op2);  % 
+op2 = rdcelpa('FBG/n_fbg_meff_03_dd_iv.elpa','*',[],op2);  %%% 
+op2 = rdcelpa('FBG/n_fbg_meff_04_dd_iv.elpa','*',[],op2);  %  
+op2 = rdcelpa('FBG/n_fbg_meff_05_dd_iv.elpa','*',[],op2);  % 
+op2 = rdcelpa('FBG/n_fbg_meff_06_dd_iv.elpa','*',[],op2);  % 
+op2 = rdcelpa('FBG/n_fbg_meff_07_dd_iv.elpa','*',[],op2);  % 
+op2 = rdcelpa('FBG/n_fbg_meff_08_dd_iv.elpa','*',[],op2);  % 9
+op2 = rdcelpa('FBG/n_fbg_meff_09_dd_iv.elpa','*',[],op2);  % 
+op2 = rdcelpa('FBG/n_fbg_meff_10_dd_iv.elpa','*',[],op2);  % 
+
+
+figure
+%h(1) = semilogy(tres(:,1),tres(:,2));
+h(1) = plot(op2(1).V_d,op2(1).I_d );
+hold on
+%axis([0 0.6 0 1e-5])
+xlabel('V_{ds} (V)')
+ylabel('I_{ds} (A)')
+grid on
+h(2) = plot(op2(2).V_d,op2(2).I_d );
+h(3) = plot(op2(3).V_d,op2(3).I_d );
+h(4) = plot(op2(4).V_d,op2(4).I_d );
+h(5) = plot(op2(5).V_d,op2(5).I_d );      
+h(6) = plot(op2(6).V_d,op2(6).I_d );      
+h(7) = plot(op2(7).V_d,op2(7).I_d );      
+h(8) = plot(op2(8).V_d,op2(8).I_d );
+h(9) = plot(op2(9).V_d,op2(9).I_d );
+h(10) = plot(op2(10).V_d,op2(10).I_d );
+h(11) = plot(op2(11).V_d,op2(11).I_d );

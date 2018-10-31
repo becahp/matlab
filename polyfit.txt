@@ -1,0 +1,98 @@
+x = linspace(0,1,5);
+y = 1./(1+x);
+
+p = polyfit(x,y,4);
+
+x1 = linspace(0,2);
+y1 = 1./(1+x1);
+f1 = polyval(p,x1);
+
+figure
+plot(x,y,'o')
+hold on
+plot(x1,y1)
+plot(x1,f1,'r--')
+legend('y','y1','f1')
+
+
+%op(1) : fbg
+%op(3) : 1g
+%op(5) : 2g
+%op(7) : 3g
+
+%p = polyfit(op7(1).G,op7(1).Isum, 1);
+%f1 = polyval(p, op7(1).G);
+% 
+%figure
+%plot(op7(1).G,op7(1).Isum,'o')
+%hold on
+%plot(op7(1).G,f1,'r--')
+%legend('y','y1','f1')
+
+%primeiro pega os valores interessantes
+for i=1:7
+	y(i) = op7(1).Isum(4+i);
+	x(i) = op7(1).G(4+i);
+end
+
+%faz o polyfit
+p = polyfit(x,log(y), 1);
+
+%refina
+x1 = linspace(x(1),x(7));
+y1 = linspace(y(1),y(7));
+
+%polyval
+f1 = polyval(p,x);
+ 
+figure
+semilogy(x,y,'o')
+hold on
+%semilogy(x1,y1)
+plot(x,f1,'r--')
+legend('y','y1','f1')
+
+figure
+plot(x,f1,'r--')
+
+%%%
+P = polyfit(T, log(D), 1);
+fit = exp(polyval(P, T));
+
+%%%%%%%%%%%%
+
+%primeiro pega os valores interessantes
+for opAux=1:4
+
+aux = 8; %7
+aux2 = 0; %4
+for i=1:aux
+	x(i) = op7(opAux).G(aux2+i);
+    y(i) = op7(opAux).Isum(aux2+i);
+end
+
+%faz o polyfit
+%%p(1) : slope		
+%%p(2) : constant	
+p = polyfit(x,log(y), 1);
+
+%f1 = polyval(p, x);
+fit = exp(polyval(p, x));
+%fit = power(10,polyval(p, x));
+
+%figure
+semilogy(x,y,'b');
+%hold on
+x = x -0.1;
+plot(x,fit,'k--');
+
+%ss = 1/p(1)
+
+str = num2str(p(1));
+s = strcat('SS = ',str, 'mv/dec');
+
+annotation('textbox','String',s,...
+    'FontSize', 12, 'LineStyle', 'none', 'Position',...
+    [0.33 0.45 0.065 0.066],...
+    'FitBoxToText','on');
+	
