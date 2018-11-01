@@ -90,6 +90,7 @@ end
 
 opAux = [];
 res = [];
+meuAux = [];
 
 for j=1:length(op2)
 
@@ -100,7 +101,9 @@ i = 1;
 %opAux.I_d = smooth(opAux.I_d);
 
 [op(1).x,op(1).y] = plot_elpa_gm_v30(opAux,'n');
-%[op(i).x,op(i).y] = plot_elpa_gm_v30(op2(i),'n');
+
+%meuAux(j).x = op(1).x; 
+%meuAux(j).y = op(1).y;
 
 
 
@@ -198,6 +201,9 @@ max(transY)
 %op(1).x(find(max(transY)))
 res(j) = transX(find(transY == max(transY)))
 
+meuAux(j).x = transX;
+meuAux(j).y = transY;
+
 if j == 1
 figure
 h(j)=plot(transX, transY);
@@ -223,5 +229,9 @@ legend({'VBG = 1.0 V','VBG = 0.6V','VBG = 0.2V','VBG = 0.0V','VBG = -0.2V','VBG 
 legend('boxoff')
 
 
-print('dgm_LP', '-depsc');
+% res
+% 0.3900	0.3900	0.3900	0.3600	0.3400	0.3300	0.3300
+% 0.3600	0.3600	0.3600	0.3600	0.3400	0.3300	0.3300
+
+%print('dgm_LP', '-depsc');
 

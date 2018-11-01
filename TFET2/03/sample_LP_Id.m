@@ -160,4 +160,4 @@ legend({'VBG = 0.0V','VBG = -0.2V','VBG = -0.4V','VBG = -0.6V','VBG = -0.8V','VB
 legend('boxoff')
 
 
-print('var_BG_LP2', '-depsc');
+%print('var_BG_LP2', '-depsc');

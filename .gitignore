@@ -4,9 +4,9 @@
 *.jpeg
 *.png
 
+# Simulation files
+*.inp
+*.elpa
+
 # Folders
-Equation/
 image_to_eps/
-**/Data/*.elpa
-**/*Data/*.elpa
-*/*/*Data/*.elpa

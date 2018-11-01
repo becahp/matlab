@@ -50,7 +50,7 @@ addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\06_Ron
 %%
 %%%Read data and store it in a struct
 op2 = [];		
-aux = 2
+aux = 3
 
 if aux == 0
 op2 =  rdcelpa('nFET_saida_dd_iv.elpa','*',[],op2);

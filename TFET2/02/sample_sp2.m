@@ -46,6 +46,7 @@ map = [0, 0, 1
 
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\02_spacer
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\re
 
 
 %%
@@ -59,7 +60,7 @@ op2 =  rdcelpa('nHP_sp_20_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('nHP_sp_30_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('nHP_tbox_25_dd_iv.elpa','*',[],op2); %padrão
 
-op2 =  rdcelpa('nLP_sp_10_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('re/nLP_sp_10_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('nLP_sp_20_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('nLP_sp_30_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('nLP_tbox_25_dd_iv.elpa','*',[],op2); %padrão
