@@ -1,0 +1,678 @@
+/*****************************************************************************************************************************************/
+reunião 07/11
+
+- Ion/Ioff HP/LP para todas as tensões de backgate
+	- Ion = 1.0V
+	- Ioff = 0.0V
+
+/*****************************************************************************************************************************************/
+reunião 31/10
+
+- Para LP: plotar a tensão de vth em função da tensão de backgate
+	- usar vbg de +/- 0.35
+	- Para HP: gráfico de linhas com pólos abertos
+
+- Para simulação de variação de VPG
+	- simular camada FE
+	- fazer gráficos de psi e sigma em baixo de PG/CG
+	- plotar curva de 60mv/dec
+	
+	- fazer curva de saída: vg = +/-1V, vbg = 0V, vpg = 0.5
+		- troca vpg por vg
+		
+	- nova simulação sem CG (manter o resto da arquitetura)	
+	
+- Para tfet: curva de saída, Ron, EL
+	
+- Documento:
+	- Figura 3: incluir curva de 60mv/dec
+	
+/*****************************************************************************************************************************************/
+reunião 24/10
+
+- Resimular LP, vbg = 0V: verificar diferença entre Is e Id
+&DD n_iter=200 p_tol=1e-4 damp_init=7e-1 damp_min=1e-1/
+&BIAS_INFO cont_name='G' bias_fun='LIN' bias_val=0.0 1.0 101/
+
+- Para HP: plotar a tensão de vth em função da tensão de backgate
+
+- Para rampas de LP: resimular para melhorar (questao de Is/Id)
+
+- Inserir figuras de psi/sigma
+	-> fazer para o PG
+	
+- Inserir figuras de FE
+- Retirar figura 8
+- Arrumar legenda da figura 9 de Vgs para Vpg
+
+- refazer cálculos de HP com VBG = +1V (em vez de negativo)
+	+ inclusive de FEvs 
+	
+- FE
+	+ refazer cálculos separados com VBG = +/-1V
+
+/*****************************************************************************************************************************************/
+reunião 17/10
+
+- Verificar divergência entre Is e Id para HP
+
+- Refazer os gráficos com Id
+	- onde tiver problema de convergência: re-simular com inversão da rampa
+	
+- Acrescentar coluna de Vds/Ion
+	pegar valor da curva de saída em 0.5V
+	
+- Mudar intervalo de Ron para 0->0.1	
+	
+- plotar psi/sigma no mesmo gráfico para nHP e nLP
+	- abaixo de PG também
+	
+/*****************************************************************************************************************************************/
+reunião 10/10
+
+- arquitetura assimétrica: dopar de Source até CG - 5nm e dopar com  -2e9, -1e9
+	+ dv = -0.2
+
+- calcular capacitância do tfet assimétrico
+
+- atualizar 7b) com vbg = 0V e melhor direção da rampa
+	+ calcular negative capacitância
+
+- curva de saída para nHP/nLP para vbg = 0V	
+	
+- plotar psi_s em função do Vg puro, para nHP/nLP
+	- plotar sigma também
+	- abaixo de CG
+	- abaixo de PG também
+	
+- simular GS de -1V até 1V	
+	+ vbg = 0V
+	+ vg = 1V
+	+ plotar psi_s e sigma
+	
+/*****************************************************************************************************************************************/
+reunião 03/10
+
+- Plot de d(gm)/dx para nHP e nLP
+	- usando smooth
+
+- arquitetura assimétrica: dopar de Source até CG - 5nm e dopar com  -5e9, -1e9
+
+- backgate adaptativo v2: usar rampa de vg de 0.0->1.0
+
+- simular miniFET com phi_sb=-0.1, -0.15, -0.2
+
+- no Latex:
+	- atualizar a Figura 1a) com novo tfet
+	- criar figura de estrutura do tfet
+	- retirar figuras 1b) e 1c)
+
+- Ron ideal: (vbg = -1V)
+	descobrir qual tensão da curva azul é a mesma para a NC-CNTFET
+	calcular saída para essa tensão
+	calcular Ron em cima disso
+	cálculo de energia: vsup de NC-CNTFET é metade da vsup de ideal
+	
+- calcular Rons	
+	- gráfico: 
+	eixo x -> 8CL * Ron 
+	eixo y -> 8CL * Vsup^2
+
+	vsup = 0.5V
+
+	
+/*****************************************************************************************************************************************/
+reunião 19/09
+
+- vth de nLP
+	- método smooth	
+	%smooth
+		% ignorar os 3 primeiros
+		% ignorar os 3 últimos
+		% aplicar smooth de 3 em 3
+	- simular entre 0.1-0.6 com mais pontos
+	
+- aplicar derivada de gm para encontrar vth de backgate
+	- nHP/nLP
+	
+	
+	- Valores: 
+	nHP 0.24V
+	
+	backgate HP:
+	-0.000852499698024680
+	0.0162580656726250
+	0.0321922825387047
+	0.0370051651469146
+	0.0567625476576623
+	0.126974465069358
+	0.237503827927513
+	
+	backhate LP:
+	
+0.00961861039999995	
+0.0100663879999999	
+0.0106834210999999	
+0.0111444458000000	
+0.0117861392000000	
+0.0131401935000000	
+0.0147586253999999
+
+/*****************************************************************************************************************************************/
+reunião 12/09
+
+- Buscar no nanohub se tem modelos de simulação de circuitos
+	- tem parâmetros de tensão limiar? como extrair?
+
+- Plotar gm (transcondutância): extrair Vth da mesma forma
+	- realizar para nHP e nLP
+
+- mini tfet: espaço de 10nm: dopar negativamente com: -5e9, -1e9,
+	- adaptar arquitetura assimétrica: dopar de Source até CG - 5nm e dopar com -1e10, -1e8, -1e6, -1e4  
+
+- verificar direção das simulações: correto 1.0->0.0
+
+- mudar legenda Fig.1 : tfet-> sbFET
+
+- novas figuras de dv
+
+- Tensão adaptativa: VBG = -1.0 + 2*VGS
+	
+- curva de saida ideal	
+/*****************************************************************************************************************************************/
+reunião 05/09
+
+- mini tfet: espaço de 10nm: dopar negativamente com: -1e8, -1e6, -1e4  
+
+- Verificar direção da rampa de nLP nas simulações do dispositivo ideal com VBG = 0V
+
+/*****************************************************************************************************************************************/
+reunião 29/08
+
+- Calcular capacitância para dispositivo ideal
+- Calcular Ion/Ioff 
+	- ambos miniFETs
+	- dispositivo ideal HP/LP 
+	- dispositivo com camada FE HP/LP 
+
+- Calcular vth
+	- miniFET: VDS = 0.05V
+	- dispositivos: VDS = 0.05V
+
+- Gráfico de Vth por VBG (resimular)
+	- com VDS pequeno
+	- para mostrar que Vth pode ser ajustado com backgate
+	
+- Dispositivos:
+	- max VGS = 0.5V
+	- max VDS = 0.5V
+- miniFET: VDD: 0.5V	
+	
+- Calcular FE:
+	- Dispositivo ideal com VBG = 0V	
+	- Dispositivo ideal com VBG = -VPG	
+	
+	
+/*****************************************************************************************************************************************/
+reunião 22/08
+
+- mini nFET/tFET:
+	- plot de energia (EL) x atraso (Ps) (plotar como um ponto)
+	- extrair capacitância, Ron
+	- simular curvas de saída (VGS = Vsup = 0.5V)-> procurar tensão mínima + 0.5V 
+		+ não para tFET
+		+ mínimo: Id = 1.735e-8A (VGS = 0.11V) -> VG = 0.61V
+	- medir SS: inclinação depois do mínimo
+	
+	- simular
+		fonte tipo p
+		espaço de 10nm: dopar negativamente com -10e10
+		CG de 22nm
+		espaço de 5nm
+		dreno tipo n
+	
+- densidade de tubos (Ron é por tubo)	
+
+- workfunction das portas (dv)
+	+ simular com outros valores: 0.1 e 0.26
+	+ para -- e -+
+
+- Curvas de saída para o dispositivo Ideal: VGS = 0.5V
+	
+/*****************************************************************************************************************************************/
+reunião 15/08
+
+- Simular mini nFET: somente S, CG, D, BG e tbox (10nm, 5nm, 22nm, 5nm, 10nm)
+	+ uso de SOI de 25nm
+	+ BG de 1nm
+	+ d: 1.4nm
+	+ curvas de transferência 0 a 1V (simular com mais para curvas de FE: 1.5V)
+	+ desenho da estrutura
+	
+- Simular mini tunnel FET
+	+ Source p (sb = 0 para lacunas)
+	+ Drain n (sb = 0 para condutância)
+
+- Figuras de estrutura
+	+ adicionar tbox = 25nm
+	+ arrumar segunda figura da estrutura
+
+- Um gráfico para cada com a estrutura ideal: (distancia = 40nm, tbox = 25nm, dv = -0.18)
+	+ VPG 
+	+ distância entre CG e dreno 
+	+ workfunction das portas (dv)
+	+ espessura do óxido (tbox)
+	
+- Material properties: (tabela com parâmetros do ponto ótimo)
+	+ Diametro, bandgap
+	+ workfunction
+	+ espessura do tbox
+	+ distância entre CG e dreno 
+
+- Backgate
+	+ um gráfico mostrando o impacto do backgate a partir da estrutura ideal
+	+ VBG: -1.0V até 1.0V em passos de 0.2V
+	+ Tensão adaptativa: VBG = 1.0 - 2*VGS
+	
+- Camada FE
+	+ pq impacto não é tão grande em nLP
+	+ gráficos: charge density (Fig4 a)/psi_s (Fig 15 a) em um único ponto em baixo da porta vs VG em cada ponto de trabalho
+	+ Fig16 a: charge density vs VGs
+	
+
+- resultado final: vds = 0.5V, vgs = 0-0.5V, tbox = 25nm, VBG = -VPG	
+	
+/*****************************************************************************************************************************************/
+reunião 06/08
+
+- processo de otimização: VPG, workfunction das portas, espessura do óxido
+	- processo de afastamento entre porta e dreno (distância d)
+	- efeito backgate (fora tensão limiar/)
+
+- nHP: FET/NC-FET, nLP: TFET/NC-TFET
+	+ 2G-CNTFET
+	+ com FE: 2G-NC-CNTFET
+
+- Funcionamento
+	psi_s varia com VG
+		- nHP muda muito
+		- nLP não muda VG
+
+		
+- plot de psi_s(VG) e charge density 
+	+ Fig 15: para nHP e nLP
+	+ Fazer também para sigma (VG) para nHP/nLP
+	
+- variar tFE e alpha
+	
+- gráfico de comparação de desempenho
+
+
+/*****************************************************************************************************************************************/
+reunião 12/07
+
+- fazer dois documentos:
+	1) processo de otimização
+	2) resultados finais
+	
+- arrumar tensão de programação
+- escrever porque fizemos as mudanças
+- descrever o mecanismo da camada ferroelétrica nas curvas
+
+- colocar backgate nas figuras
+
+-> pq: vpgs, desenho assimétrico, função de trabalho dos contatos (dv), espessura do óxido, efeito do backgate
+-> quais: parâmetros de investigação	
+
+- fazer algumas simulações com substrato
+
+- fazer plot: de charge density para nLP, 
+- fazer plots: psi semi (0, 0.1V, 0.5V) e charge density (mesmos pontos)
+	+ com vbg = 0V
+	+ com vbg = -VPG
+	+ para nHP/nLP com e sem FE
+	
+- mudança em tFE/tox (sem mudar tbox = 25nm): tanto da razão quanto de tFE	
+
+- diferenciar tox de tbox	
+	
+/*****************************************************************************************************************************************/
+reunião 14/06
+
+- plotar \psi_s em função do VG e \sigma em função de VG
+	+ saber se em nLP \psi_s é igual a VG, nHP e bem diferente.
+
+- simular nLP com VBG = 0.2, 0.4, 0.6, 0.8
+	+ descobrir onde curva de FE é igual
+	- simular par nHP
+	
+/*****************************************************************************************************************************************/
+reunião 12/06
+
+- plotar sem e com FE layer:
+	+ tox = 25nm, vds = 0.5v, VBG=-VPG
+	
+- simular nHP com vds 0.5 e VBG = VPG
+
+/*****************************************************************************************************************************************/
+reunião 17/05
+
+- Simular com vds = 0.5V
+	- tox 30nm e 35nm
+	- nLP/nHP: inverter o VBG, tox = 25nm, 30nm e 35nm
+
+- mudar legenda da Fig 12
+	+ em vez de 'manual shift' usar 'without dv'
+
+- Encontrar Eox para verificar
+	- simular psi 2D para pontos 0.1, 0.2, 0.3 e 04
+	- embaixo da porta e no meio do oxido
+	
+/*****************************************************************************************************************************************/
+reunião 17/05
+
+- Trocar gráfico de potencial
+
+- Simular VBG = 0V, tox = 25nm e spacer de 40nm
+	- para dv = 0
+	- plotar potencial 1D e comparar com anterior
+		
+	- para dv = -0.18
+	- simular 2D: Vg = -0.3 até 0.3 (psi)
+	- Encontrar VG onde campo elétrico Eox é zero (em baixo da porta)
+
+- Escrever o gap para o diâmetro
+
+- Nova figura de estrutura: acrescentar FE layer/oxide : do tamanho do óxido
+
+/*****************************************************************************************************************************************/
+reunião 10/05
+
+- Padronizar colorbar no plot de potencial
+
+- Usar VBG = 0V, tox = 25nm e spacer de 40nm
+	- simular psi de 0 a 0.5V em 21 passos
+	- comparar psi de cada ponto de trabalho com o gerado em psi_elpa
+	- usar mesmo ponto de psi_semi (x é o mesmo, y vai ser onde o nanotubo está localizado)
+	
+	- plotar nHP/nLP com e sem cálculo de FE
+		- resimular com VDS = 0.5V, VG=0 até 1.5V (121 passos)
+		- depois calcular o FE
+		- plot limitado de 0 até 0.5V
+	
+/*****************************************************************************************************************************************/
+reunião 03/05
+
++ refazer plots da figura 10 com óxido fixo e diferentes VBGs
+	- melhorar as duas curvas que estão ruins
+
++ FE plot
+	- usar simulação de VBG = 0V, tox = 25nm e spacer de 40nm
+
+/*****************************************************************************************************************************************/
+reunião 19/04
+
++ Consertar arquitetura do backgate + oxido
+	- Simular com psi (backgate + oxido) para discretização
+		- usar mesma escala
+	- Simular backgate + oxido + spacer de 40nm
+		- 0.0V, +/-0.2, -0.4, +0.6
+		- usar VBG contrária ao VGS (ex: VGS = +1.0V, VBG = -1.0V)
+	
+- FE Capacitance
+	- plot Vgs vs Psi_s, depois plotar Id(Vgs(Psi)
+	- primeiro passo:
+		+ realizar equacao de poisson com rho(0) (média da carga do canal abaixo da porta, é constante: rho(y>0)=0), Psi(cnt)=Psi_s
+			- boundary condition: Psi(0) = Psi_s, E(tox) = 0
+			- E0 = 16 * e0 (8.85 e-21 Fnm-1)
+			- primeiro usar rho sem ser média, usar rho abaixo da porta, dividir pelo comprimento efetivo
+				rho(LG/2,0)/LGeff
+				
+	- plot Id vs Psi_s (potencial no canal) (está no elpa de cada ponto de trabalho)
+		- deve ser uma reta
+	- em matlab: solucionador para Poission + Laundaer + Khalatnikov unidimensional (na direção y: perpendicular) (Psi, P)
+		- entre o Control Gate e o canal
+		- parâmetros: 
+			+ média da carga do canal Qs (sob Lg + dL) (comprimento não é exatamente o tamanho da porta, tem que ter +/- 5nm) 
+			+ Psi_s: potencial no meio do canal (Lg/2)
+			+ Condições de contorno: Psi(0) = Psi_s, P(0) = ???
+			+ Resultado é Psi(5nm) = Vg -> nova tabela com Vg(Psi_s)
+			
+	
+/*****************************************************************************************************************************************/
+email 03/04
+
+- Simular backgate + oxido + spacer de 40nm
+	+ VBG = 0.6V
+	
+/*****************************************************************************************************************************************/
+reunião 29/03
+
+- Simular com psi (backgate + oxido) para discretização
+	- VBG = 0V, VGS = 1V, para nHP/nLP
+	- Simular VBG adaptativo
+
+- Simular backgate + oxido + spacer de 40nm
+	- usar PG/CG com dv = -0.18V
+	- oxido de 10, 15 e 25
+	- primeiro com VBG = 0V
+		- depois com +/-0.2, +/-0.4
+	- realizar uma com psi	
+	
+	nHP_BG_004_10.inp
+	
+- Plotar psi_mid para mesmos pontos da Fig 13 (está no elpa) (charge density)
+	- unidade é volt
+
+- Limpar o sharelatex
+	Manter Fig 2, 13, 17b
+	Por enquanto 15 e 16 são importantes por agora
+
+/*****************************************************************************************************************************************/
+reunião 15/03
+
+- Deslocamento na mão do VPG
+	+ dv positivo na program gate
+	+ dv negativo na outra porta
+	
+		VPG		G
+	v1: +0.18	+0.18
+	v2: -0.18	+0.18
+	v3: +0.18	-0.18
+	v4: -0.18	-0.18
+	
+- nova estrutura que em vez de BG tem apenas óxido
+	- usar SiO2 de 25nm
+	- discretização de 1nm (pelo menos nos primeiros 5nm)
+	+ se funcionar, usar um backgate de 1nm com 0V
+		- depois usar passos de 0.2: 0, +/-0.2, +/-0.4
+
+/*****************************************************************************************************************************************/
+Email 02/03
+
++ Fig.13: Para finalizar, seria interessante simular nHP e nLP para um RT-nanoFET com VPG=1V e dv=0.18V aplicada para ambos, a porta de programação PG e de controle CG.
+ 
+(i) compara o potencial 2d sem substrato e com substrato de 50nm com VBG=0V. Vamos selecionar os pontos de trabalho de VGS=0V, 0.5V e 1V (VDS=0.4V). 
+
+(ii) Repetir as simulações da Fig. 15 com outra discretização (mais fino).
+
+/*****************************************************************************************************************************************/
+reunião 09/03
+
+- Deslocamento na mão do VPG
+	+ usar dv positivo
+	
+- plotar para vários pontos de trabalho o número das cargas embaixo da portas no cnt
+	+ em inqu.elpa: d_n, d_p versus x
+	+ plotar para nHP: 0V, 0.5V, 1.0V
+	
+- atualizar sharelatex até 17h de segunda feira	
+/*****************************************************************************************************************************************/
+reunião 01/03
+
+- Deslocamento na mão do VPG
+	+  vpg = 1.0 (para nHP/nLP), com deslocamento nos dois de -0.2 (vpg final: nHP = 0.8, nLP = -1.2)
+	+  vpg = 1.2 (para nHP/nLP), com deslocamento nos dois de -0.2 (vpg final: nHP = 1.0, nLP = -1.4)
+	+  vpg = 1.2 (para nHP/nLP), com deslocamento nos dois de -0.4 (vpg final: nHP = 0.8, nLP = -1.6)
+
+- simular backgate 
+	+ refazer Fig 9(a,b) com óxido do backgate de 25nm (VGB = -0.6, -0.2, 0V, 0.2, 0.6)
+		- nHP e nLP com VBG = 0V
+	+ nLP: adaptativo com mais pontos (depois de saber o óxido do backgate)
+
+- plotar para vários pontos de trabalho o número das cargas embaixo da portas no cnt
+	+ certificar que é Q_ch no manual (x vs Q_ch)
+
+/*****************************************************************************************************************************************/
+reunião 27/02
+
+- Simular backgate com 1.0 e 1.4V
+
+- Backgate com tensão adaptativa: VBG = 1.0 - 2*VGS
+	+ VGS = 1V, VBG = -1V
+	  VGS = 0.3V, VBG = 0.6V
+	
+/*****************************************************************************************************************************************/
+reunião 23/02
+
+- tabela com as barreiras (offset/tensão de trabalho)
+	+ todos os contatos: fonte/dreno e PG/CG
+	+ para todas as imagens
+
+- Figura com vários diagramas de bandas para configuração escolhida: sp 40nm, ambos contatos tipo n
+
+- Simular tensão de programação do nLP de -1.2, -1.4V , -1.6, -1.8V		
+
+- Procurar como colocar deslocamento na mão
+	+ fazer uma simulação de teste com vpg = 1.2 (para nHP/nLP), com deslocamento nos dois de -0.4 (vpg final: nHP = 0.8, nLP = -1.6)
+	+ offset de -0.4, HP = 1.4, LP = -1.4 (para na verdade nHP = 1.0, nLP = -1.8)
+	
+- Preparar diagramas de bandas para backgate 0V, 1V e -1V
+
+/*****************************************************************************************************************************************/
+reunião 02/02
+
+- criar sharelatex com documentação
+
+
+/*****************************************************************************************************************************************/
+reunião 05/12
+
+- usar com tensão assimétrica:
+	+ mudar tensão de programação do nLP de -1.2, -1.4V , -1.6, -1.8V
+	+ nHP: 0.6V, 0.8, 1.0, 1.2, 1.4V 
+	+ tensão da porta até 2V
+
+- backgate:
+	+ usar tensão de programação = +/-1.0V (nHP/nLP)
+	+ nHP: -0.1, 0, 0.1, 0.3V
+	+ nLP: 0.7,0.8,0.9V
+	+ VBG = 0V para ambos modos
+	+ simular Vgs até 2V
+
+/*****************************************************************************************************************************************/
+reunião 28/11
+
+- Imagem da estrutura com spacer de 40nm
+
+/*****************************************************************************************************************************************/
+reunião 23/11
+
+- hipótese: dois contatos n, tensão de programação = 1V, spacer = 40nm
+	- usar com tensão assimétrica:
+		+ mudar tensão de programação do nLP de -1.0, -0.8V, -0.6V (tensão da porta até 1.0V)
+		+ manter nHP do jeito que está
+	
+	- backgate: 
+		+ usar tensão de programação = +/-1.0V (nHP/nLP)
+		+ de 1V até -1V: 1 0.6 0.2 -0.2 -0.6 -1 (em ambos modos)
+
+- depois de selecionar geo ótima:
+	+ mostrar o que muda variando os parâmetros: spacer, tensão de programação, mudar os contatos de n para mid
+	
+/*****************************************************************************************************************************************/
+reunião 21/11
+
+- simulações do spacer:
+	+ usar sp = 30 e 40nm
+	+ refazer com ambos contatos tipo n (5nm, 10, 20, 30, 40nm)
+	+ usar um dreno diferente: mais alto (5nm, 10, 20, 30, 40nm)
+	+ usar tensão de programação = 1.0V, VGS até 1.4
+
+- usar um backgate: 5nm de óxido + terceira porta (tamanho 5n)
+	
+/*****************************************************************************************************************************************/
+reunião 16/11
+
+- tabela que mostre os modos de operação
+	PGS: High/Low Power = +/-0.8
+
+- com distancia 5nm, variar o gap (para mais)
+	+ usar dia = 1.0nm, 1.2nm
+
+- usar tensão programação GS de +/-0.8 até +/-1.4 em 0.2
+	+ mudar tensão G para 1.4V
+	+ fazer com contatos tipo n também
+	
+- repetir simulações com dois contatos tipo n	
+
+- aumentar distância entre porta de programação e dreno de 5nm para 10nm e 20nm 
+	+ aumentar cnt e tamanho total correspondente
+	
+/*****************************************************************************************************************************************/
+reunião 14/11
+
+- redefinir: porta esquerda é programacao, direita é controle
+&BIAS_INFO cont_name='G' bias_fun='LIN' bias_val= +/-0.8/
+&BIAS_INFO cont_name='GD' bias_fun='TAB' bias_val=0.8 0 81/
+
+Depois:
+- aumentar distância entre porta de programação e dreno de 5nm para 10nm e 20nm 
+	+ aumentar cnt e tamanho total correspondente
+	+ usa posicao mid no dreno, vgd = 0.8V
+	
+- com distancia 5nm, variar o gap (para mais)
+	+ usar dia = 1.0nm, 1.2nm
+
+- Futuramente: para VGD = {1.0, 1.2, 1.4}, simular dreno com barreira 0 para elec/holes
+
+/*****************************************************************************************************************************************/
+reunião 09/11
+
+- simular dreno com barreira 0 (para eletrons)
+	+ com barreira 0 (para lacunas)
+
+- usar tensão programação GD de -0.8 até -1.4 em 0.2
+	+ mudar tensão G para maior valor da tensão de programação 
+
+- incluir diagramas de bandas no relatório
+
+- fazer desenho da estrutura no inkscape
+
+- futuramente: aumentar comprimento das portas (não a distância)
+
+/*****************************************************************************************************************************************/
+reunião 07/11
+
+- GD é a porta de programação (+/- 0.8V)
+
+/*****************************************************************************************************************************************/
+reunião 31/10
+
+- Começar relatório com novas figuras
+
+- Simular com versão coos_v20a os arquivos da dropbox
+	+ simular com coos v30 
+	+ depois retirar overlap
+	- descobrir diferença de landauer/velocity em &CONTACT
+	
+- Nova arquitetura:
+	- adaptar o tamanho da cnt
+	- Control gate (novo source gate): 22nm, começando em 5n,
+	- Espaço do óxido de 20
+	- Drain program gate: 22nm (retirar overlap)
+
+	usar em fonte barreira 0 (para virar um transistor tipo n)
+	usar em dreno barreira egap/2
+
+- exemplos de erros de simulação
