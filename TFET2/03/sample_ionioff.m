@@ -45,6 +45,7 @@ map = [0, 0, 1
 
 
 
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\HP
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\LP
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\re
 
@@ -54,6 +55,27 @@ op2 = [];
 %aux = 2
 %%%%%%%%%
 
+%for aux=1:2
+aux = 2
+if aux == 1
+op2 =  rdcelpa('HP/nHP_BG_010_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('HP/nHP_BG_008_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('HP/nHP_BG_006_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('HP/nHP_BG_004_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('HP/nHP_BG_002_dd_iv.elpa','*',[],op2);
+
+op2 =  rdcelpa('HP/nHP_BG_000_dd_iv.elpa','*',[],op2);
+
+op2 =  rdcelpa('HP/nHP_BG_102_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('HP/nHP_BG_104_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('HP/nHP_BG_106_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('HP/nHP_BG_108_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('HP/nHP_BG_110_dd_iv.elpa','*',[],op2);
+
+str = 'HP';
+end
+
+if aux == 2
 op2 =  rdcelpa('LP/nLP_BG_010_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('LP/nLP_BG_008_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('LP/nLP_BG_006_dd_iv.elpa','*',[],op2);
@@ -68,11 +90,12 @@ op2 =  rdcelpa('re/nLP_BG_106_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('re/nLP_BG_108_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('re/nLP_BG_110_dd_iv.elpa','*',[],op2);
 
+op2(9).I_d = wrev(op2(9).I_d);
+op2(10).I_d = wrev(op2(10).I_d);
+op2(11).I_d = wrev(op2(11).I_d);
 
-%%
-%%%Visualize data stored in a struct 
-%%%Data is accessed via names of the struct elements
-%%%Simple preprocessing of data can be done
+str = 'LP';
+end
 
 op2(1).I_d = abs(op2(1).I_d);
 op2(2).I_d = abs(op2(2).I_d);
@@ -85,80 +108,55 @@ op2(8).I_d = abs(op2(8).I_d);
 op2(9).I_d = abs(op2(9).I_d);
 op2(10).I_d = abs(op2(10).I_d);
 op2(11).I_d = abs(op2(11).I_d);
-%op2(12).I_d = abs(op2(12).I_d);
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-figure %positivo
-h(1) = semilogy(op2(1).V_g,op2(1).I_d );
+for i=1:length(op2)
+ion(i) = op2(i).I_d(1); %1V
+ioff(i) = op2(i).I_d(101); %0V
+vgb(i) = op2(i).V_gb(1);
+ratio(i) = ion(i)./ioff(i);
+end %for i
 
-xlabel('V_{gs} (V)')
-ylabel('I_{ds} (A)')
+%end % for aux
 
-axis([0 1 1E-17 1e-5])
-%ay = gca;
-%ay.YTick = [1e-12 1e-11 1e-10 1e-9 1e-8 1e-7 1e-6 1e-5];
+%%
+%%%Visualize data stored in a struct 
+%%%Data is accessed via names of the struct elements
+%%%Simple preprocessing of data can be done
 
-hold; 
-h(2) = semilogy(op2(2).V_g,op2(2).I_d);
-h(3) = semilogy(op2(3).V_g,op2(3).I_d);
-h(4) = semilogy(op2(4).V_g,op2(4).I_d);
-h(5) = semilogy(op2(5).V_g,op2(5).I_d);
-h(6) = semilogy(op2(6).V_g,op2(6).I_d); %0V
-
-hold off;
-
-h(1).Color = map(1,:);
-h(2).Color = map(2,:);
-h(3).Color = map(3,:);
-h(4).Color = map(4,:);
-h(5).Color = map(5,:);
-
-h(6).Color = map(6,:); %0V
-
-legend({'VBG = +1.0V','VBG = +0.8V','VBG = +0.6V','VBG = +0.4V','VBG = +0.2V','VBG = 0.0V'}, 'Location', 'best');
-legend('boxoff')
-
-print('var_BG_LP1', '-depsc');
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure
-h(6) = semilogy(op2(6).V_g,op2(6).I_d); %0V
+h(1) = plot(vgb, ion * 1e6);
+xlabel('V_{GB} (V)')
+ylabel('I_{on} (\mu A)')
 
-xlabel('V_{gs} (V)')
-ylabel('I_{ds} (A)')
-axis([0 1 1E-17 1e-5])
+if aux == 2
+ylim([0 0.2]);
+end
 
+strAux = [str '_ion'];
+print(strAux, '-depsc');
 
-hold;
-h(7) = semilogy(op2(7).V_g,op2(7).I_d);
-h(8) = semilogy(op2(8).V_g,op2(8).I_d);
-h(9) = semilogy(op2(9).V_g,op2(9).I_d);
-h(10) = semilogy(op2(10).V_g,op2(10).I_d);
-h(11) = semilogy(op2(11).V_g,op2(11).I_d);
-%h(12) = semilogy(op2(12).V_g,op2(12).I_d);
-
-
-
-h(6).Color = map(6,:); %0V
-h(7).Color = map(5,:);
-h(8).Color = map(4,:);
-h(9).Color = map(3,:);
-h(10).Color = map(2,:);
-h(11).Color = map(1,:);
-%h(12).Color = map(6,:);
-
-%h(7).LineStyle = '--';
-%h(8).LineStyle = '--';
-%h(9).LineStyle = '--';
-%h(10).LineStyle = '--';
-%h(11).LineStyle = '--';
-%h(12).LineStyle = '--';
-
-legend({'VBG = 0.0V','VBG = -0.2V','VBG = -0.4V','VBG = -0.6V','VBG = -0.8V','VBG = -1.0V'}, 'Location', 'best');
-
-%legend({'VBG = |1.0|V','VBG = |0.8|V','VBG = |0.6|V','VBG = |0.4|V','VBG = |0.2|V','VBG = 0.0V'}, 'Location', 'best');
-legend('boxoff')
+figure
+if aux == 1
+h(1) = plot(vgb, ioff * 1e9);
+ylabel('I_{off} (nA)')
+end
+if aux == 2
+h(1) = plot(vgb, ioff * 1e12);
+ylabel('I_{off} (pA)')
+end
+xlabel('V_{GB} (V)')
 
 
-%print('var_BG_LP2', '-depsc');
+strAux = [str '_ioff'];
+print(strAux, '-depsc');
+
+
+figure
+h(1) = plot(vgb, ratio);
+xlabel('V_{GB} (V)')
+ylabel('I_{on}/I_{off}')
+
+strAux = [str '_ratio'];
+print(strAux, '-depsc');

@@ -128,28 +128,30 @@ op2 =  rdcelpa(auxStr,'*',[],op2);
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------
-%plot Vgs vs Psi_s
-figure
-h(1) = plot(op2(1).V_gs,psi_s);
-xlabel('V_pg (V)');
-ylabel('\Psi_{channel} (V)');
-%xlim([0 0.5])
+plot = 0
+if plot == 123
+	%plot Vgs vs Psi_s
+	figure
+	h(1) = plot(op2(1).V_gs,psi_s);
+	xlabel('V_pg (V)');
+	ylabel('\Psi_{channel} (V)');
+	%xlim([0 0.5])
 
-auxStr = [gate '_' nomeFile '_psi'];
-print(auxStr, '-depsc');
+	auxStr = [gate '_' nomeFile '_psi'];
+	print(auxStr, '-depsc');
 
-%-------------------------------------------------------------------------------------------------------------------------------------
-%plot Vgs vs sigma
-figure
-h(1) = plot(op2(1).V_gs,sigma*1e6);
+	%-------------------------------------------------------------------------------------------------------------------------------------
+	%plot Vgs vs sigma
+	figure
+	h(1) = plot(op2(1).V_gs,sigma*1e6);
 
-xlabel('V_pg (V)')
-ylabel('\sigma_{channel} (\mu C/m^2)')
-%xlim([0 0.5])
+	xlabel('V_pg (V)')
+	ylabel('\sigma_{channel} (\mu C/m^2)')
+	%xlim([0 0.5])
 
-auxStr = [gate '_' nomeFile '_sigma'];
-print(auxStr, '-depsc');
-
+	auxStr = [gate '_' nomeFile '_sigma'];
+	print(auxStr, '-depsc');
+end
 %-------------------------------------------------------------------------------------------------------------------------------------
 % space_charge tem que ser multiplicado pelo comprimento da porta
 %eps_cnt = 5 * eps_0;
@@ -163,7 +165,7 @@ tox = 5e-9;
 %------------------------------------------------------------------------------------------------------------------------------------- FE layer
 eps_FE = eps_ox;
 tFE = tox;
-alpha_eps = 0.4;
+alpha_eps = 0.5;
 q = 1.60217653e-19;
 
 for k = 1:tamanho
@@ -188,6 +190,8 @@ for k = 1:tamanho
 end
 
 %-------------------------------------------------------------------------------------------------------------------------------------
+plot = 123
+if plot == 123
 figure
 h(1) = semilogy(op2(1).V_gs,op2(1).I_d);
 hold
@@ -199,26 +203,25 @@ ylabel('I_d (A)')
 
 %axis([0 0.5 1E-8 2e-5])
 
-if aux == 11 || aux == 22 || aux == 221
-axis([0 0.5 1E-15 1e-7])
-ay = gca;
-ay.YTick = [1e-15 1e-13 1e-11 1e-9 1e-7];
-end
+%if aux == 11 || aux == 22 || aux == 221
+%axis([0 0.5 1E-15 1e-7])
+%ay = gca;
+%ay.YTick = [1e-15 1e-13 1e-11 1e-9 1e-7];
+%end
 
-legend('TFET', 'NCTFET with FE layer', 'Location', 'best');
+legend('TFET', 'NCPG', 'Location', 'Northwest');
 legend('boxoff')
 
 auxStr = ['FE_' nomeFile];
-%print(auxStr, '-depsc');
+print(auxStr, '-depsc');
 
-
-
+end
 %-------------------------------------------------------------------------------------------------------------------------------------
 plot = 0;
-if plot == 12321
-alpha_eps = [0 0.1 0.2 0.3 0.4 0.5];
+if plot == 1234
+alpha_eps = [0 0.1 0.2 0.3 0.4 0.5 0.6 0.7];
 
-for i=1:6
+for i=1:8
 
 for k = 1:tamanho
   teste = abs(Qs_eff(k)) * q / w;  
