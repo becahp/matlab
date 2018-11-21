@@ -92,7 +92,7 @@ h(1).Color = map(1,:);
 
 
 %legend({'nHP','nLP'}, 'Location', 'best');
-legend({'VCG = +1V, VBG = 0V', 'VPG = +1V,VBG = 0V'}, 'Location', 'best'};
+legend({'VCG = +1V, VBG = 0V', 'VPG = +1V,VBG = 0V'}); %, 'Location', 'best'};
 legend('boxoff')
 
 print('var_GS2', '-depsc');

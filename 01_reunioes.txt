@@ -1,3 +1,18 @@
+/*****************************************************************************************************************************************/
+reunião 21/11
+
+- Simular parte negativa:
+    - estrutura com duas portas HP
+    - vpg: 1V, variar CG
+    - atualizar figura completa
+
+    - estrutura com duas portas LP
+    - vpg: -1V, variar CG
+    - atualizar figura completa
+
+
+/*****************************************************************************************************************************************/
+
 OCTAVE
 
 addpath ~/UnB/Artigo/Simulacoes/TFET2/
