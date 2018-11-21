@@ -45,9 +45,9 @@ map = [0, 0, 1
 
 
 
-addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\HP
-addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\LP
-addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\re
+addpath ~/UnB/Artigo/Simulacoes/TFET2/03_backgate/HP
+addpath ~/UnB/Artigo/Simulacoes/TFET2/03_backgate/LP
+addpath ~/UnB/Artigo/Simulacoes/TFET2/03_backgate/re
 
 %%
 %%%Read data and store it in a struct
@@ -56,39 +56,39 @@ op2 = [];
 %%%%%%%%%
 
 %for aux=1:2
-aux = 2
+aux = 1
 if aux == 1
-op2 =  rdcelpa('HP/nHP_BG_010_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('HP/nHP_BG_008_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('HP/nHP_BG_006_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('HP/nHP_BG_004_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('HP/nHP_BG_002_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_010_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_008_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_006_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_004_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_002_dd_iv.elpa','*',[],op2);
 
-op2 =  rdcelpa('HP/nHP_BG_000_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_000_dd_iv.elpa','*',[],op2);
 
-op2 =  rdcelpa('HP/nHP_BG_102_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('HP/nHP_BG_104_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('HP/nHP_BG_106_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('HP/nHP_BG_108_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('HP/nHP_BG_110_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_102_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_104_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_106_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_108_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_110_dd_iv.elpa','*',[],op2);
 
 str = 'HP';
 end
 
 if aux == 2
-op2 =  rdcelpa('LP/nLP_BG_010_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('LP/nLP_BG_008_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('LP/nLP_BG_006_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('LP/nLP_BG_004_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('LP/nLP_BG_002_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_BG_010_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_BG_008_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_BG_006_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_BG_004_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_BG_002_dd_iv.elpa','*',[],op2);
 
-op2 =  rdcelpa('LP/nLP_BG_000_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_BG_000_dd_iv.elpa','*',[],op2);
 
-op2 =  rdcelpa('LP/nLP_BG_102_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('LP/nLP_BG_104_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('re/nLP_BG_106_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('re/nLP_BG_108_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('re/nLP_BG_110_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_BG_102_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_BG_104_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('renLP_BG_106_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('renLP_BG_108_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('renLP_BG_110_dd_iv.elpa','*',[],op2);
 
 op2(9).I_d = wrev(op2(9).I_d);
 op2(10).I_d = wrev(op2(10).I_d);
@@ -135,7 +135,7 @@ ylim([0 0.2]);
 end
 
 strAux = [str '_ion'];
-print(strAux, '-depsc');
+%print(strAux, '-depsc');
 
 figure
 if aux == 1
@@ -150,7 +150,7 @@ xlabel('V_{GB} (V)')
 
 
 strAux = [str '_ioff'];
-print(strAux, '-depsc');
+%print(strAux, '-depsc');
 
 
 figure
@@ -159,4 +159,4 @@ xlabel('V_{GB} (V)')
 ylabel('I_{on}/I_{off}')
 
 strAux = [str '_ratio'];
-print(strAux, '-depsc');
+%print(strAux, '-depsc');

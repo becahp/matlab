@@ -44,9 +44,8 @@ map = [0, 0, 1
 	0, 0, 1];
 
 
-%addpath ~/becahp/UnB/Artigo/Simulacoes/TFET2/04_FE/var_vds05
-addpath ("~/UnB/Artigo/Simulacoes/TFET2/04_FE/var_vds05")
-addpath ~/UnB/Artigo/Simulacoes/TFET2/02_otimizacao/04_tbox/nHP_tbox_25 %vbg 0v, nHP
+addpath ~/UnB/Artigo/Simulacoes/TFET2/04_FE/var_vds05
+addpath ~/UnB/Artigo/Simulacoes/TFET2/04_FE/var_vds05_sem
 
 %%
 %%%Read data and store it in a struct
@@ -55,9 +54,7 @@ op2 = [];
 %%%%%%%%%
 
 op2 =  rdcelpa('var_vds05_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('nHP_tbox_25_dd_iv.elpa','*',[],op2);
-
-
+op2 =  rdcelpa('var_vds05_sem_dd_iv.elpa','*',[],op2);
 
 %%
 %%%Visualize data stored in a struct 
@@ -81,22 +78,25 @@ ylabel('I_{d} (A)')
 %ay.YTick = [1e-12 1e-11 1e-10 1e-9 1e-8 1e-7 1e-6 1e-5];
 
 hold; 
-h(2) = semilogy(op2(2).V_g,op2(2).I_d);
+h(2) = semilogy(op2(2).V_gs,op2(2).I_d);
 %h(3) = semilogy(op2(3).V_g,op2(3).I_d);
 %h(4) = semilogy(op2(4).V_g,op2(4).I_d);
 
-%h(1).Color = map(1,:);
+
 set(h(1),"color",map(1,:)) 
-set(h(2),"color",map(2,:)) 
+set(h(2),"color",map(2,:))
+ 
+%h(1).Color = map(1,:);
 %h(2).Color = map(2,:);
 %h(3).Color = map(1,:);
 %h(4).Color = map(2,:);
 
-%%octave
-legend ({'VCG = +1V, VBG = 0V', 'VPG = +1V,VBG = 0V'}, "location", "best");
+
 
 %legend({'nHP','nLP'}, 'Location', 'best');
-%legend({'VCG = +1V, VBG = 0V', 'VPG = +1V,VBG = 0V'}, 'Location', 'best'};
-%legend('boxoff')
+legend({"VCG = +1V, VBG = 0V", "sem PG"}, "location", "southeast");
+legend("boxoff");
+
+print "var_sem" -depsc
 
 %print('var_GS2', '-depsc');
