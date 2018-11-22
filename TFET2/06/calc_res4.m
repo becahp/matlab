@@ -1,4 +1,4 @@
-function [r_on] = calc_res2(i, op2)
+function [r_on] = calc_res4(i, op2)
 %function [r_on,r_out] = calc_res2(i, op2)
 
 %funcao para calcular a resistencia de entrada (R_on) da curva de saida
