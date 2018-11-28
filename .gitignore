@@ -13,3 +13,6 @@ image_to_eps/
 
 # Octave
 octave-workspace
+
+# modified
+~*.*

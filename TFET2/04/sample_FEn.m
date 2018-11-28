@@ -41,27 +41,51 @@ op1 = [];
 op2 = [];
 %%%%%%%%%
 
-aux = 1
+aux = 11
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% HP
+%vbg = -1V
+%vpg = 1V
 if aux == 1 %vbg = inverso com vds 0.5V
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\00_ideal\nHP_vds05
 end
 
-if aux == 11 %vbg = inverso com vds 0.5V NLP
-addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\00_ideal\nLP_vds05
-end
-
+%vbg = 0V
+%vpg = 1V
 if aux == 2 %vbg = 0V, com vds 0.5V
 %addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET\04_hipotese\07_backgate_sp\nHP_BG_000_25
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\04_tbox\nHP_tbox_25
 end
 
+%vbg = 1V
+%vpg = 1V
+if aux == 3 %vbg = inverso com vds 0.5V
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\HP\nHP_BG_010
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% LP
+%vbg = 1V
+%vpg = -1V
+if aux == 11 %vbg = inverso com vds 0.5V NLP
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\00_ideal\nLP_vds05
+end
+
+%vbg = 0V
+%vpg = -1V
 if aux == 22 %vbg = 0V, com vds 0.5V nLP	1.0 0.0 101/
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\04_tbox\nLP_tbox_25
 end
 
 if aux == 221 %vbg = 0V, com vds 0.5V nLP	0.0 1.0 101/
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\00_ideal\03_rampa\nLP_tbox_25_v2
+end
+
+
+%vbg = -1V
+%vpg = -1V
+if aux == 33 %vbg = inverso com vds 0.5V NLP
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\re\nLP_BG_110
 end
 
 %------------------------------------------------------------------------------------------------------------------------------------- PSI
@@ -93,6 +117,18 @@ end
 
 if aux == 221 %
 nomeFile = ['nLP_tbox_25_v2'];
+tamanho = 101;
+um = 1;
+end
+
+if aux == 3 %
+nomeFile = ['nHP_BG_010'];
+tamanho = 101;
+um = tamanho;
+end
+
+if aux == 33 %
+nomeFile = ['nLP_BG_110'];
 tamanho = 101;
 um = 1;
 end
@@ -222,11 +258,11 @@ xlabel('V_g (V)')
 ylabel('I_d (A)')
 %xlim([0 0.5])
 
-if aux == 1 || aux == 2
+if aux == 1 || aux == 2 || aux == 3
 axis([0 0.5 1E-8 2e-5])
 end
 
-if aux == 11 || aux == 22 || aux == 221
+if aux == 11 || aux == 22 || aux == 221 || aux == 33
 axis([0 0.5 1E-15 1e-7])
 ay = gca;
 ay.YTick = [1e-15 1e-13 1e-11 1e-9 1e-7];
@@ -235,6 +271,27 @@ end
 legend('TFET', 'NCTFET with FE layer', 'Location', 'best');
 legend('boxoff')
 
+if aux == 1
+nomeFile = ['HP_110'];
+end
+if aux == 2
+nomeFile = ['HP_000'];
+end
+if aux == 3 %
+nomeFile = ['HP_010'];
+end
+
+if aux == 11
+nomeFile = ['LP_110'];
+end
+if aux == 22 || aux == 221
+nomeFile = ['LP_000'];
+end
+if aux == 33
+nomeFile = ['LP_010'];
+end
+
+
 auxStr = ['FE_' nomeFile];
-%print(auxStr, '-depsc');
+print(auxStr, '-depsc');
 

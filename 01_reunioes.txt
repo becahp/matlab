@@ -1,4 +1,28 @@
 /*****************************************************************************************************************************************/
+reunião 21/11
+
+- Simular parte negativa:
+    - estrutura com duas portas HP
+    - vpg: 1V, variar CG
+    - atualizar figura completa
+
+    - estrutura com duas portas LP
+    - vpg: -1V, variar CG
+    - atualizar figura completa
+
+
+/*****************************************************************************************************************************************/
+
+OCTAVE
+
+addpath ~/UnB/Artigo/Simulacoes/TFET2/
+
+set(h(1),"color",map(1,:)) 
+
+legend ({'VCG = +1V, VBG = 0V', 'VPG = +1V,VBG = 0V'}, "location", "best");
+
+
+/*****************************************************************************************************************************************/
 reunião 07/11
 
 - Ion/Ioff HP/LP para todas as tensões de backgate
