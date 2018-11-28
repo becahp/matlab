@@ -56,7 +56,7 @@ op2 = [];
 %%%%%%%%%
 
 %for aux=1:2
-aux = 2
+aux = 1
 if aux == 1
 op2 =  rdcelpa('HP/nHP_BG_010_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('HP/nHP_BG_008_dd_iv.elpa','*',[],op2);
@@ -90,9 +90,14 @@ op2 =  rdcelpa('re/nLP_BG_106_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('re/nLP_BG_108_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('re/nLP_BG_110_dd_iv.elpa','*',[],op2);
 
-op2(9).I_d = wrev(op2(9).I_d);
-op2(10).I_d = wrev(op2(10).I_d);
-op2(11).I_d = wrev(op2(11).I_d);
+%op2(9).I_d = wrev(op2(9).I_d);
+%op2(10).I_d = wrev(op2(10).I_d);
+%op2(11).I_d = wrev(op2(11).I_d);
+
+op2(9).I_d = flip(op2(9).I_d);
+op2(10).I_d = flip(op2(10).I_d);
+op2(11).I_d = flip(op2(11).I_d);
+
 
 str = 'LP';
 end
@@ -135,7 +140,7 @@ ylim([0 0.2]);
 end
 
 strAux = [str '_ion'];
-print(strAux, '-depsc');
+%print(strAux, '-depsc');
 
 figure
 if aux == 1
@@ -150,7 +155,7 @@ xlabel('V_{GB} (V)')
 
 
 strAux = [str '_ioff'];
-print(strAux, '-depsc');
+%print(strAux, '-depsc');
 
 
 figure
@@ -159,4 +164,4 @@ xlabel('V_{GB} (V)')
 ylabel('I_{on}/I_{off}')
 
 strAux = [str '_ratio'];
-print(strAux, '-depsc');
+%print(strAux, '-depsc');

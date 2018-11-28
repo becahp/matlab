@@ -57,8 +57,7 @@ op2 =  rdcelpa('nFET_saida_dd_iv.elpa','*',[],op2);
 end
 
 if aux == 1
-op2 =  rdcelpa('nFET_saida_dd_iv.elpa','*',[],op2);
-
+op2 =  rdcelpa('tFET_saida_dd_iv.elpa','*',[],op2);
 end
 
 if aux == 2
@@ -83,6 +82,11 @@ end
 for i=1:length(op2)
 %res(i) = calc_res4(i, op2);
 res(i) = calc_res_show(i, op2);
+
+
+find(op2(i).V_d == 0.5)
+op2(i).I_d(find(op2(i).V_d == 0.5))
+
 end %i=1:length(op2) 
 
 
