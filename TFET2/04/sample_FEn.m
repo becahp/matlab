@@ -41,7 +41,7 @@ op1 = [];
 op2 = [];
 %%%%%%%%%
 
-aux = 11
+aux = 33
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% HP
@@ -282,13 +282,13 @@ nomeFile = ['HP_010'];
 end
 
 if aux == 11
-nomeFile = ['LP_110'];
+nomeFile = ['LP_010'];
 end
 if aux == 22 || aux == 221
 nomeFile = ['LP_000'];
 end
 if aux == 33
-nomeFile = ['LP_010'];
+nomeFile = ['LP_110'];
 end
 
 

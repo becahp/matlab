@@ -56,7 +56,7 @@ op2 = [];
 %%%%%%%%%
 
 %for aux=1:2
-aux = 1
+aux = 2
 if aux == 1
 op2 =  rdcelpa('HP/nHP_BG_010_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('HP/nHP_BG_008_dd_iv.elpa','*',[],op2);
@@ -140,7 +140,7 @@ ylim([0 0.2]);
 end
 
 strAux = [str '_ion'];
-%print(strAux, '-depsc');
+print(strAux, '-depsc');
 
 figure
 if aux == 1
