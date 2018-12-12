@@ -72,6 +72,7 @@ op2 =  rdcelpa('nLP_BG_neg_dd_iv.elpa','*',[],op2);
 
 op2(1).I_d = abs(op2(1).I_d);
 op2(2).I_d = abs(op2(2).I_d);
+op2(2).I_s = abs(op2(2).I_s);
 %op2(2).I_d = smooth(op2(2).I_d,1);
 op2(3).I_d = abs(op2(3).I_d);
 op2(4).I_d = abs(op2(4).I_d);

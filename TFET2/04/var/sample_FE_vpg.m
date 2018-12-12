@@ -197,7 +197,7 @@ h(1) = semilogy(op2(1).V_gs,op2(1).I_d);
 hold
 h(2) = semilogy(Vg_FE,op2(1).I_d);
 
-xlabel('V_pg (V)')
+xlabel('V_{pg} (V)')
 ylabel('I_d (A)')
 %xlim([0 0.5])
 
@@ -209,7 +209,7 @@ ylabel('I_d (A)')
 %ay.YTick = [1e-15 1e-13 1e-11 1e-9 1e-7];
 %end
 
-legend('TFET', 'NCPG', 'Location', 'Northwest');
+legend('mmFET', 'mmNCFET', 'Location', 'Northwest');
 legend('boxoff')
 
 auxStr = ['FE_' nomeFile];

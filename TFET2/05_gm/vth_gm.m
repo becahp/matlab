@@ -57,6 +57,39 @@ vth_lp = [0.3600	0.3600	  0.3600	0.3600	  0.3400	0.3300	  0.3300];
 %%%Visualize data stored in a struct 
 %%%Data is accessed via names of the struct elements
 %%%Simple preprocessing of data can be done
+%sel = 2;
+%1o = 6:7
+%2o = 3:5
+%3o = 1:2
+res = [];
+for sel=1:3
+sel
+if sel == 3
+a = 6;
+b = 7;
+end
+
+if sel == 2
+a = 3;
+b = 5;
+
+end
+if sel == 1
+a = 1;
+b = 2;
+end
+
+x = vbg(a:b);
+y = vth_hp(a:b);
+
+%faz o polyfit
+%%p(1) : slope		
+%%p(2) : constant	
+p = polyfit(x,y, 1);
+res(1,sel) = p(1);
+res(2,sel) = (vth_hp(b)-vth_hp(a)) / (vbg(b) - vbg(a)) ;
+res
+end
 
 
 figure
@@ -74,7 +107,8 @@ hold off;
 print('vth_HP', '-depsc');
 
 
-
+pule = 0;
+if pule == 1
 figure
 h(1) = plot(vbg,vth_lp, '-o');
 xlabel('V_{\rm BG} (V)')
@@ -83,3 +117,4 @@ axis([-1.1 1.1 0.3 0.4]);
 hold off;
 
 print('vth_LP', '-depsc');
+end

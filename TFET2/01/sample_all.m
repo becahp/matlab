@@ -24,8 +24,8 @@ set(0,'DefaultAxesTickLength',[0.02 0.02]);
 % set(0,'DefaultAxesOuterPosition', [0 0 7 7]);
 % set(0,'DefaultAxesPosition',[1 1 5 4]); 
 %%set(0,'DefaultAxesUnits','normalized');
-%%set(0,'DefaultAxesOuterPosition', [0 0 1 1]);
-%%set(0,'DefaultAxesPosition',[0.15 0.15 0.7 0.7]); 
+set(0,'DefaultAxesOuterPosition', [0 0 1 1]);
+set(0,'DefaultAxesPosition',[0.2 0.25 0.75 0.7]); 
  
 % Object type: Text
 set(0,'DefaultTextFontName','Arial');
@@ -104,31 +104,35 @@ xlabel('V_{gs} (V)')
 ylabel('I_{ds} (A)')
 
 axis([0 0.5 1E-15 2e-5])
+ax = gca;
+ax.YTick = [1e-15 1e-13 1e-11 1e-9 1e-7 1e-5];
+
+
 %ay = gca;
 %ay.YTick = [1e-12 1e-11 1e-10 1e-9 1e-8 1e-7 1e-6 1e-5];
 
 hold; 
 h(2) = semilogy(op2(2).V_g,op2(2).I_d);
 h(3) = semilogy(op2(3).V_g,op2(3).I_d);
-h(4) = semilogy(op2(4).V_g,op2(4).I_d);
+%h(4) = semilogy(op2(4).V_g,op2(4).I_d);
 h(5) = semilogy(op2(5).V_g,op2(5).I_d);
 
 %h(6) = semilogy(op2(4).V_g,op2(4).I_s);
-h(7) = semilogy(op2(5).V_g,op2(5).I_s);
+%h(7) = semilogy(op2(5).V_g,op2(5).I_s);
 
 h(1).Color = map(1,:);
 h(2).Color = map(2,:);
 h(3).Color = map(3,:);
-h(4).Color = map(4,:);
+%h(4).Color = map(4,:);
 h(5).Color = map(5,:);
 %h(6).Color = map(4,:);
-h(7).Color = map(5,:);
+%h(7).Color = map(5,:);
 
 
 h(3).LineStyle = '--';
-h(4).LineStyle = '--';
+%h(4).LineStyle = '--';
 h(5).LineStyle = '--';
-h(7).LineStyle = '--';
+%h(7).LineStyle = '--';
 
 %legend([h(1) h(3)],{'nHP','nLP','nHP n','nLP n'}, 'Position',[0.70,0.60,0.25,0.1]);  % Only the blue and green lines appear in the legend
 
@@ -136,7 +140,8 @@ h(7).LineStyle = '--';
 %legend({'nFET','SB-FET'}, 'Location', 'best');
 %legend({'nFET', 'nHP ideal','tFET','tFET doping', 'nLP ideal'}, 'Location', 'best');
 %legend({'nFET', 'nHP ideal','tFET doping', 'nLP ideal'}, 'Location', 'best');
-legend({'nFET', 'nHP vbg=0V','tFET doping', 'nLP vbg=1V', 'nLP vbg=0V'}, 'Location', 'best');
+%legend({'nFET', 'nHP vbg=0V','tFET doping', 'nLP vbg=1V', 'nLP vbg=0V'}, 'Location', 'best'); %antigo
+legend({'nFET', 'mmFET-HP','TFET', 'mmFET-LP'}, 'Location', 'best');
 legend('boxoff')
 
 print('miniFET_all', '-depsc');
