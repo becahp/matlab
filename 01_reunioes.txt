@@ -1,4 +1,24 @@
 /*****************************************************************************************************************************************/
+RESUMO
+
+> Simulações
+- Resimular parte negativa de HP
+- Simular curva de saída para HP/LP que faltam
+
+> Analisar
+- Variar VPG: fazer curva de saída: vg = +/-1V, vbg = 0V, vpg = 0.5
+
+
+Curvas:
+- Melhorar gráfico de Ps vs tr
+- Fazer gráfico de FE para o nFET
+- Figura 3: incluir curva de 60mv/dec
+
+
+> Inkscape / GLE
+- Source-sided CG é nFET
+
+/*****************************************************************************************************************************************/
 reunião 21/11
 
 - Simular parte negativa:
