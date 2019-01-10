@@ -49,7 +49,7 @@ addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\06_Ron
 %%
 %%%Read data and store it in a struct
 op2 = [];		
-aux = 4
+aux = 2
 
 if aux == 0
 op2 =  rdcelpa('nFET_saida_dd_iv.elpa','*',[],op2);
@@ -61,7 +61,7 @@ end
 
 if aux == 2 %vbg = -1V
 op2 =  rdcelpa('nHP_vbg110_s_dd_iv.elpa','*',[],op2);
-%op2 =  rdcelpa('nLP_vds05_s_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nLP_vbg110_s_dd_iv.elpa','*',[],op2);
 end
 
 if aux == 3 %vbg = 0V
@@ -85,7 +85,7 @@ for i=1:length(op2)
 %res(i) = calc_res4(i, op2);
 res(i) = calc_res_show(i, op2);
 
-
+%encontrar Id para cálculo
 find(op2(i).V_d == 0.5)
 op2(i).I_d(find(op2(i).V_d == 0.5))
 clear res
