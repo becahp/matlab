@@ -58,7 +58,7 @@ op2 = [];
 
 %op2 =  rdcelpa('var_vds05_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('nHP_tbox_25_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('nHP_BG_neg_dd_iv3.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_neg_dd_iv4.elpa','*',[],op2);
 
 op2 =  rdcelpa('var_vds05_sem_dd_iv.elpa','*',[],op2);
 
@@ -72,7 +72,7 @@ op2 =  rdcelpa('nLP_BG_neg_dd_iv.elpa','*',[],op2);
 
 op2(1).I_d = abs(op2(1).I_d);
 op2(2).I_d = abs(op2(2).I_d);
-op2(2).I_s = abs(op2(2).I_s); %i_s
+op2(2).I_s = abs(op2(2).I_d); %i_s
 %op2(2).I_d = smooth(op2(2).I_d,1);
 op2(3).I_d = abs(op2(3).I_d);
 op2(4).I_d = abs(op2(4).I_d);

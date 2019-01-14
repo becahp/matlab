@@ -41,10 +41,14 @@ op1 = [];
 op2 = [];
 %%%%%%%%%
 gate = 'PG';
-aux = 1;
+aux = 2;
 
 if aux == 1 
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\04_FE\var_vds05
+end
+
+if aux == 2
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\04_FE\var_vds05_sem
 end
 
 %------------------------------------------------------------------------------------------------------------------------------------- PSI
@@ -52,6 +56,12 @@ end
 %preciso dos nomes nHP_BG_inv_25_dd_iv, nHP_BG_inv_25_op
 if aux == 1
 nomeFile = ['var_vds05'];
+tamanho = 161;
+um = 81;
+end
+
+if aux == 2
+nomeFile = ['var_vds05_sem'];
 tamanho = 161;
 um = 81;
 end
@@ -208,8 +218,14 @@ ylabel('I_d (A)')
 %ay = gca;
 %ay.YTick = [1e-15 1e-13 1e-11 1e-9 1e-7];
 %end
-
+if aux == 1
 legend('mmFET', 'mmNCFET', 'Location', 'Northwest');
+end
+
+if aux == 2
+legend('nFET', 'nNCFET', 'Location', 'Northwest');
+end
+
 legend('boxoff')
 
 auxStr = ['FE_' nomeFile];

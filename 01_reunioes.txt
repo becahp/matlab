@@ -1,9 +1,13 @@
 /*****************************************************************************************************************************************/
 RESUMO
 
+nFET: miniFET
+mmFET: PG+CG+BG
+
+nFET: just CG + GB
+
 > Simulações
 - Resimular parte negativa de HP
-- Simular curva de saída para HP/LP que faltam
 
 > Analisar
 - Variar VPG: fazer curva de saída: vg = +/-1V, vbg = 0V, vpg = 0.5
