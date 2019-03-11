@@ -1,5 +1,5 @@
 clear;
-close all; 
+%close all; 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
 % Figure settings for publications %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %
@@ -48,6 +48,7 @@ addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\04_FE\var_vds05_sem
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\04_tbox\nHP_tbox_25 %vbg 0v, nHP
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\04_tbox\nLP_tbox_25 %vbg 0v, nHP
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\neg
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\negHP
 
 
 %%
@@ -58,7 +59,9 @@ op2 = [];
 
 %op2 =  rdcelpa('var_vds05_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('nHP_tbox_25_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('nHP_BG_neg_dd_iv4.elpa','*',[],op2);
+
+%op2 =  rdcelpa('nHP_BG_neg_v3_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('nHP_BG_neg_v4_dd_iv.elpa','*',[],op2);
 
 op2 =  rdcelpa('var_vds05_sem_dd_iv.elpa','*',[],op2);
 
@@ -72,7 +75,7 @@ op2 =  rdcelpa('nLP_BG_neg_dd_iv.elpa','*',[],op2);
 
 op2(1).I_d = abs(op2(1).I_d);
 op2(2).I_d = abs(op2(2).I_d);
-op2(2).I_s = abs(op2(2).I_d); %i_s
+op2(2).I_s = abs(op2(2).I_s); %i_s
 %op2(2).I_d = smooth(op2(2).I_d,1);
 op2(3).I_d = abs(op2(3).I_d);
 op2(4).I_d = abs(op2(4).I_d);
@@ -124,4 +127,4 @@ legend('boxoff');
 
 %print "var_sem" -depsc
 
-print('compare_var_sem', '-depsc');
+%print('compare_var_sem', '-depsc');
