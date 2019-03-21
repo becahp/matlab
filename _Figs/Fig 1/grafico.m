@@ -56,6 +56,8 @@ y2 =[2.96E-16 	6.24E-17 	9.42E-17 	9.42E-17 	9.42E-17 	9.42E-17]; %y2 (potência
 %símbolo TFET
 %simbolo de mmFET:manter o mesmo
 
+
+
 % -------------------------------------------------------------------------------------------------------------------------
 xnano = [8.16E-11];
 xtfet = [8.12E-09];
@@ -69,17 +71,30 @@ ynano2 = [2.96E-16];
 ytfet1 = [9.60E-15];
 ytfet2 = [6.24E-17];
 
-ymmfet11 = [1.42E-08 	1.51E-15];
-ymmfet11 = [9.42E-17 	9.42E-17];
+%ymmfet11 = [1.42E-08 	1.51E-15];
+%ymmfet11 = [9.42E-17 	9.42E-17];
 
-ymmfet0 = [2.38E-08 	1.05E-14];
-ymmfet0 = [9.42E-17 	9.42E-17];
+%ymmfet0 = [2.38E-08 	1.05E-14];
+%ymmfet0 = [9.42E-17 	9.42E-17];
 
 ymmfet1 = [1.42E-08 	1.51E-15 	2.38E-08 	1.05E-14];
 ymmfet2 = [9.42E-17 	9.42E-17 	9.42E-17 	9.42E-17];
 
 
 % -------------------------------------------------------------------------------------------------------------------------
+% dividir x por 10
+% multiplicar y por 10
+
+xnano = xnano/10;
+xtfet = xtfet/10;
+xmmfet = xmmfet./10;
+
+ynano1 = 10*ynano1;
+ytfet1 = 10*ytfet1;
+ynano2 = 10*ynano2;
+ytfet2 = 10*ytfet2;
+ymmfet1= 10 .* ymmfet1;
+ymmfet2= 10 .* ymmfet2;
 
 elp.mat=[xnano',ynano1'];
 elp.var_names={'x','y'};
@@ -89,11 +104,6 @@ save_elpa(['Data/',elp.title,'.elpa'],elp)
 elp.mat=[xtfet',ytfet1'];
 elp.var_names={'x','y'};
 elp.title='Fig1_d2';
-save_elpa(['Data/',elp.title,'.elpa'],elp)
-
-elp.mat=[xmmfet',ymmfet1'];
-elp.var_names={'x','y'};
-elp.title='Fig1_d3';
 save_elpa(['Data/',elp.title,'.elpa'],elp)
 
 elp.mat=[xnano',ynano2'];
@@ -106,11 +116,32 @@ elp.var_names={'x','y'};
 elp.title='Fig2_d2';
 save_elpa(['Data/',elp.title,'.elpa'],elp)
 
-elp.mat=[xmmfet',ymmfet2'];
+%elp.mat=[xmmfet',ymmfet1'];
+%elp.var_names={'x','y'};
+%elp.title='Fig1_d3';
+%save_elpa(['Data/',elp.title,'.elpa'],elp)
+%
+%elp.mat=[xmmfet',ymmfet2'];
+%elp.var_names={'x','y'};
+%elp.title='Fig2_d3';
+%save_elpa(['Data/',elp.title,'.elpa'],elp)
+
+for i=1:4
+str = num2str(i);
+
+elp.mat=[xmmfet(i),ymmfet1(i)];
 elp.var_names={'x','y'};
-elp.title='Fig2_d3';
+s = strcat('Fig1_',str);
+elp.title=s;
 save_elpa(['Data/',elp.title,'.elpa'],elp)
 
+elp.mat=[xmmfet(i),ymmfet2(i)];
+elp.var_names={'x','y'};
+s = strcat('Fig2_',str);
+elp.title=s;
+save_elpa(['Data/',elp.title,'.elpa'],elp)
+
+end
 
 %h(1) = loglog(xnano,ynano1,'s');
 %h(2) = loglog(xtfet,ytfet1, '+');
@@ -140,7 +171,7 @@ set(H2,'Marker','*')
 end
 
 
-pule = 0;
+pule = 1;
 if pule == 1
 figure
 yyaxis left
@@ -150,21 +181,21 @@ hold;
 h(2) = loglog(xtfet,ytfet1, '+');
 h(3) = loglog(xmmfet,ymmfet1, 'd');
 hold off;
-ylabel('P_{\rm s} (W/ch)')
-ylim([1e-16 1e-6])
+ylabel('P_{\rm s} (W/um)')
+ylim([1e-15 1e-5]) %ylim([1e-16 1e-6])
 
 yyaxis right
 h(4) = loglog(xnano,ynano2,'s');
 hold; 
 h(5) = loglog(xtfet,ytfet2, '+');
 h(6) = loglog(xmmfet,ymmfet2, 'd');
-ylabel('E_{\rm L} (J)')
-ylim([1e-17 5e-16])
+ylabel('E_{\rm L} (J/um)')
+ylim([1e-16 5e-15]) %ylim([1e-17 5e-16])
 
-xlabel('\tau (s/ch)')
-xlim([1e-11 1e-7])
+xlabel('\tau (s)')
+xlim([1e-12 1e-8])
 ax = gca;
-ax.XTick = [1e-11 1e-10 1e-9 1e-8 1e-7];
+ax.XTick = [1e-12 1e-11 1e-10 1e-9 1e-8];
 
 
 legend([h(1), h(2), h(3)],{'nanoFET','tFET','mmFET'}, 'Location', 'southwest');

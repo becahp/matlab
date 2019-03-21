@@ -1,14 +1,20 @@
-tex $10^{-12}$
-tex $10^{-10}$
-tex $10^{-08}$
-tex $10^{-06}$
-tex $10^{-04}$
-tex $I_{\rm D}\,/\, \si{\ampere}$
-tex -1
-tex 0
-tex 1
-tex $V_{\rm GS}\,/\,\si{\volt}$
-tex Exp. data
-tex $d=\SI{1.8}{\nano\metre}$
-tex $d=\SI{2.4}{\nano\metre}$
-tex $d=\SI{2.4}{\nano\metre}$ (btb = 0)
+tex {\footnotesize $10^{-10}$}
+tex {\footnotesize $10^{-8}$}
+tex {\footnotesize $10^{-11}$}
+tex {\footnotesize $10^{-9}$}
+tex {\tiny $10^{-16}$}
+tex {\normalsize $\tau\,/\,\si{\second}$}
+tex {\tiny $10^{-15}$}
+tex {\tiny $10^{-13}$}
+tex {\tiny $10^{-11}$}
+tex {\tiny $10^{-09}$}
+tex {\tiny $10^{-07}$}
+tex {\footnotesize $10^{-12}$}
+tex {\tiny $10^{-14}$}
+tex {\footnotesize $E_{\rm active}\,/\, \si{\joule\per\micro\metre}$}
+tex {\tiny 2}
+tex {\tiny 5}
+tex {\footnotesize $P_{\rm off}\,/\, \si{\watt\per\micro\metre}$}
+tex {\footnotesize Disconnect clock}
+tex {\footnotesize Reduced size increases}
+tex {\footnotesize dynamic power}
