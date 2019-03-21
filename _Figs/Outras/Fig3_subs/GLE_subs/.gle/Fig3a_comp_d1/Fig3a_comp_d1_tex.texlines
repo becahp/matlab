@@ -1,0 +1,18 @@
+tex {\footnotesize $10^{-12}$}
+tex {\footnotesize $10^{-10}$}
+tex {\footnotesize $10^{-08}$}
+tex {\footnotesize $10^{-06}$}
+tex {\footnotesize $10^{-04}$}
+tex {\normalsize $I_{\rm D}\,/\, \si{\ampere}$}
+tex {\footnotesize -1.5}
+tex {\footnotesize -1.0}
+tex {\footnotesize -0.5}
+tex {\footnotesize 0.0}
+tex {\footnotesize 0.5}
+tex {\footnotesize 1.0}
+tex {\footnotesize 1.5}
+tex {\footnotesize 2.0}
+tex {\normalsize $V_{\rm GS}\,/\,\si{\volt}$}
+tex {\scriptsize Exp. data}
+tex {\scriptsize $d=\SI{2.4}{\nano\metre}$}
+tex {\scriptsize ($\SI{50}{\nano\metre}$ substrate)}

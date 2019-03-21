@@ -1,0 +1,51 @@
+include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 0.5 0.72
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+set hei 0.8*text_height
+
+amove 0.4 0.2
+
+begin graph
+   nobox 
+   fullsize
+ 
+	!c1= V_g, c2= I_s
+	data ../Data/Fig8vsup_d1.elpa ignore 2 d1=c1,c2
+	data ../Data/Fig8vsup_d2.elpa ignore 2 d2=c1,c2
+	data ../Data/Fig8vsup_d3.elpa ignore 2 d3=c1,c2
+	data ../Data/Fig8vsup_d4.elpa ignore 2 d4=c1,c2
+	
+	d1 line lwidth 0.020000 lstyle 1  color cfaedred$ !rgb(0,0,1)
+    d2 line lwidth 0.020000 lstyle 1  color cfaedblue1$!rgb(0,0.5,0)
+    d3 line lwidth 0.020000 lstyle 1  color cfaedblue2$!rgb(1,0,0)
+    d4 line lwidth 0.020000 lstyle 1  color cfaedgreen1$!rgb(0,0.75,0.75)
+	
+   !key off nobox compact position tr  hei 0.3633 offset 0. 0.
+   
+	xlabels dist 0.05
+    ylabels dist 0.05 !hei 0.6*text_height
+    xaxis lin min 0 max 1 dticks 0.5
+    yaxis lin min -0.05 max 1.06 dticks 0.5
+    
+	xtitle "$V_{\rm DS}/V_{\rm sup}$" adist 0.3
+	!xtitle "$V_{\rm DS}\,/\,\si{\volt}$" adist 0.3
+    ytitle "$I_{\rm D}/I_{\rm on}$" adist 0.5 !hei 0.8*text_height
+    !ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.790000 hei 0.8*text_height
+   
+end graph
+begin key
+    nobox
+    compact
+    position br
+    !offset 0.0 0.85
+    hei 0.4*text_height
+    llen 0.3
+    text  "1G"  line lwidth 0.020000 lstyle 1	color cfaedred$ !rgb(0,0,1)
+    text  "FBG" line lwidth 0.020000 lstyle 1	color cfaedblue1$!rgb(0,0.5,0)
+    text  "2G"  line lwidth 0.020000 lstyle 1	color cfaedblue2$!rgb(1,0,0)
+    text  "3G"  line lwidth 0.020000 lstyle 1	color cfaedgreen1$!rgb(0,0.75,0.75)
+end key

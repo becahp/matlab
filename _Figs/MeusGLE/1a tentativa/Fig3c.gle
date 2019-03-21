@@ -1,0 +1,70 @@
+! w_scaling=0.9
+! h_scaling=0.8
+
+! pw=w_scaling*8.4
+! ph=h_scaling*6
+
+! fw=0.81*pw
+! fh=0.81*ph
+
+! papersize pw ph
+! size fw fh
+!include papersize.gle
+
+!papersize 1.*pw ph
+!size 0.8*fw fh
+
+papersize 8.4 6
+size 0.7*8.4 0.7*6
+
+set font texcmr !psh
+set hei 0.43596 !entspricht 12pt
+ 
+set texlabels 1
+set texscale fixed
+begin texpreamble
+  \usepackage{amsmath}
+  \usepackage{helvet} 
+  \usepackage{siunitx}
+end texpreamble
+
+
+amove 0.4 0.0
+begin graph
+   nobox 
+   fullsize
+ 
+   !c1= x, c2= j_mag, c3= jp_dd_x, c4= jp_dd_x, c5= j_tun_x
+   data ..\Fig3ce\Fig3c.elpa ignore 2 d1=c1,c2 d2=c1,c3 d3=c1,c4 d4=c1,c5
+   
+   d1 line lstyle 1 lwidth 0.02 color blue	!key  "\textsc{$j_{\rm mag}$}" !
+   d2 line lstyle 1 lwidth 0.02 color green	!key  "\textsc{$j_{\rm p,dd}$}"!
+   d3 line lstyle 1 lwidth 0.02 color red	!key  "\textsc{$j_{\rm n,dd}$}"!
+   d4 line lstyle 1 lwidth 0.02 color cyan	!key  "\textsc{$j_{\rm tun}$}" !
+   
+
+   key off nobox compact position tr  hei 0.3633 offset 0. 0.
+   
+   xaxis min 0 max 500 dticks 100
+   xlabels dist 0.15 
+
+   yaxis log min 1e-16 max 1e-4 dticks 2
+   ylabels dist 0.1
+
+   xtitle "$x/\si{\nano\meter}$" hei 0.3633 adist 0.4
+   ytitle "$I/\si{\ampere}$" hei 0.3633 adist 1.1 !0.71
+   
+end graph
+
+begin key
+      nobox
+      compact
+      position rc
+      hei 0.3633
+      offset 0 0.8
+	  
+	  line lstyle 1 lwidth 0.02 color blue	text  "\textsc{$j_{\rm mag}$}" 
+	  line lstyle 1 lwidth 0.02 color green	text  "\textsc{$j_{\rm p,dd}$}"
+	  line lstyle 1 lwidth 0.02 color red	text  "\textsc{$j_{\rm n,dd}$}"
+	  line lstyle 1 lwidth 0.02 color cyan	text  "\textsc{$j_{\rm tun}$}" 
+end key 

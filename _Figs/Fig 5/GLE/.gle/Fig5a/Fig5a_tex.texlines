@@ -1,0 +1,18 @@
+tex {\scriptsize -2}
+tex {\scriptsize -1}
+tex {\scriptsize 0}
+tex {\scriptsize 1}
+tex {\scriptsize 2}
+tex {\footnotesize $I_{\rm D}\,/\, \si{\ampere}$}
+tex {\footnotesize $V_{\rm GS}\,/\,\si{\volt}$}
+tex {\tiny $10^{-17}$}
+tex {\tiny $10^{-13}$}
+tex {\tiny $10^{-09}$}
+tex {\tiny $10^{-05}$}
+tex {\tiny $10^{-15}$}
+tex {\tiny $10^{-11}$}
+tex {\tiny $10^{-07}$}
+tex {\tiny $d_{\rm p}$=\SI{100}{\nano\meter}}
+tex {\tiny $d_{\rm p}$=\SI{50}{\nano\meter}}
+tex {\tiny $d_{\rm p}$=\SI{25}{\nano\meter}}
+tex {\tiny $d_{\rm p}$}

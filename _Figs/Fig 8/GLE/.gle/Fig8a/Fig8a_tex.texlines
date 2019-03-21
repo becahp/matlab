@@ -1,0 +1,15 @@
+tex {\scriptsize -2}
+tex {\scriptsize -1}
+tex {\scriptsize 0}
+tex {\scriptsize 1}
+tex {\scriptsize 2}
+tex {\footnotesize $V_{\rm DS}\,/\,\si{\volt}$}
+tex {\scriptsize -15}
+tex {\scriptsize -10}
+tex {\scriptsize -5}
+tex {\scriptsize 5}
+tex {\scriptsize 10}
+tex {\scriptsize 15}
+tex {\footnotesize $I_{\rm D}\,/\, \si{\micro\ampere}$}
+tex {\scriptsize n-type}
+tex {\scriptsize p-type}

@@ -10,6 +10,7 @@
 
 # Folders
 image_to_eps/
+.gle/
 
 # Octave
 octave-workspace

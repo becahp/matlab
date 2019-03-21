@@ -1,0 +1,16 @@
+tex {\scriptsize $10^{-8}$}
+tex {\scriptsize $10^{-7}$}
+tex {\scriptsize $10^{-6}$}
+tex {\scriptsize $10^{-5}$}
+tex {\footnotesize $g_{\rm m,peak}\, /\, \si{\siemens}$}
+tex {\tiny 0.0}
+tex {\tiny 0.2}
+tex {\tiny 0.4}
+tex {\tiny 0.6}
+tex {\tiny 0.8}
+tex {\tiny 1.0}
+tex {\footnotesize $m_{\rm eff}\,/\,m_0$}
+tex {\tiny s1G}
+tex {\tiny sFBG}
+tex {\tiny s2G}
+tex {\tiny 3G}

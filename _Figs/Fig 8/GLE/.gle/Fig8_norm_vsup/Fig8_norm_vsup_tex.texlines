@@ -1,0 +1,9 @@
+tex {\scriptsize 0.0}
+tex {\scriptsize 0.5}
+tex {\scriptsize 1.0}
+tex {\footnotesize $I_{\rm D}/I_{\rm on}$}
+tex {\footnotesize $V_{\rm DS}/V_{\rm sup}$}
+tex {\tiny 1G}
+tex {\tiny FBG}
+tex {\tiny 2G}
+tex {\tiny 3G}

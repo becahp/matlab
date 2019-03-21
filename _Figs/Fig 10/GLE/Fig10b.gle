@@ -1,0 +1,64 @@
+include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 0.5 0.72
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+set hei 0.8*text_height
+
+amove 0.4 0.2
+
+begin graph
+   nobox 
+   fullsize
+ 
+	!c1= D, c2= Isum
+	data ../Data/Fig10b_d1.elpa ignore 2 d1=c1,c2
+	data ../Data/Fig10b_d2.elpa ignore 2 d2=c1,c2
+	data ../Data/Fig10b_d3.elpa ignore 2 d3=c1,c2
+	data ../Data/Fig10b_d4.elpa ignore 2 d4=c1,c2
+	
+	let d1 = x,d1/1e6
+	let d2 = x,d2/1e6
+	let d3 = x,d3/1e6
+	let d4 = x,d4/1e6
+	
+	d1 marker asterisk msize 0.175 lwidth 0.015 color cfaedred$ !rgb(0,0,1)
+	d2 marker asterisk msize 0.175 lwidth 0.015 color cfaedblue1$!rgb(0,0.5,0)
+	d3 marker asterisk msize 0.175 lwidth 0.015 color cfaedblue2$!rgb(1,0,0)
+	d4 marker asterisk msize 0.175 lwidth 0.015 color cfaedgreen1$!rgb(0,0.75,0.75)
+		
+	d1 line lwidth 0.020000 lstyle 1  color cfaedred$ !rgb(0,0,1)
+    d2 line lwidth 0.020000 lstyle 1  color cfaedblue1$!rgb(0,0.5,0)
+    d3 line lwidth 0.020000 lstyle 1  color cfaedblue2$!rgb(1,0,0)
+    d4 line lwidth 0.020000 lstyle 1  color cfaedgreen1$!rgb(0,0.75,0.75)
+	
+    
+   !key off nobox compact position tr  hei 0.3633 offset 0. 0.
+   
+    ylabels dist 0.02 
+	xlabels dist 0.05 hei 0.7*text_height
+    xaxis lin min 0 max 1 dticks 0.2
+    !yaxis log min 1e-02 max 10 !dticks 2
+    yaxis log min 1e-08 max 1e-5 !dticks 2
+    yaxis format "sci 0 10 expdigits 1 expsign"
+	
+	xtitle "$m_{\rm eff}\,/\,m_0$" adist 0.31 hei 0.8*text_height
+    ytitle "$g_{\rm m,peak}\, /\, \si{\siemens}$" adist 0.79
+   
+   
+end graph
+
+begin key
+    nobox
+    compact
+    position tr
+    !offset 0.0 0.7
+    hei 0.4*text_height
+    llen 0.3
+    text  "1G"  line lwidth 0.020000 lstyle 1	color cfaedred$ !rgb(0,0,1)
+    text  "FBG" line lwidth 0.020000 lstyle 1	color cfaedblue1$!rgb(0,0.5,0)
+    text  "2G"  line lwidth 0.020000 lstyle 1	color cfaedblue2$!rgb(1,0,0)
+    text  "3G"  line lwidth 0.020000 lstyle 1	color cfaedgreen1$!rgb(0,0.75,0.75)
+end key

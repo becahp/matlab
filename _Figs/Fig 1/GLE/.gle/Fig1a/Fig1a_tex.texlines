@@ -1,0 +1,14 @@
+tex $10^{-12}$
+tex $10^{-10}$
+tex $10^{-08}$
+tex $10^{-06}$
+tex $10^{-04}$
+tex $I_{\rm D}\,/\, \si{\ampere}$
+tex -1
+tex 0
+tex 1
+tex $V_{\rm GS}\,/\,\si{\volt}$
+tex Exp. data
+tex $d=\SI{1.8}{\nano\metre}$
+tex $d=\SI{2.4}{\nano\metre}$
+tex $d=\SI{2.4}{\nano\metre}$ (btb = 0)

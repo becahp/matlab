@@ -1,0 +1,21 @@
+tex {\scriptsize 0.0}
+tex {\scriptsize -1.0}
+tex {\scriptsize -0.5}
+tex {\scriptsize 0.5}
+tex {\scriptsize 1.0}
+tex {\scriptsize 1.5}
+tex {\scriptsize 2.0}
+tex {\scriptsize -1.5}
+tex {\scriptsize $10^{-12}$}
+tex {\scriptsize $10^{-10}$}
+tex {\scriptsize $10^{-08}$}
+tex {\scriptsize $10^{-06}$}
+tex {\scriptsize $10^{-04}$}
+tex {\footnotesize $I_{\rm D}\,/\, \si{\ampere}$}
+tex {\footnotesize $V_{\rm GS}\,/\,\si{\volt}$}
+tex {\scriptsize Dados exp.}
+tex {\scriptsize $N_{\rm A}$=\SI{2e5}{\per\centi\meter}}
+tex {\scriptsize $N_{\rm A}$=\SI{4e5}{\per\centi\meter}}
+tex {\scriptsize $N_{\rm A}$=\SI{6e5}{\per\centi\meter}}
+tex {\scriptsize $N_{\rm A}$=\SI{8e5}{\per\centi\meter}}
+tex {\scriptsize $N_{\rm A}$=\SI{10e5}{\per\centi\meter}}

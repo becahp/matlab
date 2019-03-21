@@ -1,0 +1,16 @@
+preamble: 5
+\documentclass{article}
+\usepackage{color}
+\usepackage{amsmath}
+
+
+\usepackage{siunitx}
+0.178893 0.246749 0.283762 0.314605 0.351618 0.419474 0.505836 0.604536 0.727911 0.869792
+preamble: 5
+\documentclass{article}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{siunitx}
+0.178893 0.246749 0.283762 0.314605 0.351618 0.419474 0.505836 0.604536 0.727911 0.869792
+
+0 0 0 0 0 0 0 0 0 0

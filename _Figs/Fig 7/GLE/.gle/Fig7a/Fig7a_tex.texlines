@@ -1,0 +1,15 @@
+tex {\tiny $10^{-12}$}
+tex {\tiny $10^{-10}$}
+tex {\tiny $10^{-08}$}
+tex {\tiny $10^{-06}$}
+tex {\scriptsize -2}
+tex {\scriptsize -1}
+tex {\scriptsize 0}
+tex {\scriptsize 1}
+tex {\scriptsize 2}
+tex {\footnotesize $I_{\rm D}\,/\, \si{\ampere}$}
+tex {\footnotesize $V_{\rm GS}\,/\,\si{\volt}$}
+tex {\tiny 1G}
+tex {\tiny FBG}
+tex {\tiny 2G}
+tex {\tiny 3G}

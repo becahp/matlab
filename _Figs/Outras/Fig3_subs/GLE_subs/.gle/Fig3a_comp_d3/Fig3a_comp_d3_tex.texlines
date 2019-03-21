@@ -1,0 +1,18 @@
+tex $10^{-12}$
+tex $10^{-10}$
+tex $10^{-08}$
+tex $10^{-06}$
+tex $10^{-04}$
+tex $I_{\rm D}\,/\, \si{\ampere}$
+tex -1.5
+tex -1.0
+tex -0.5
+tex 0.0
+tex 0.5
+tex 1.0
+tex 1.5
+tex 2.0
+tex $V_{\rm GS}\,/\,\si{\volt}$
+tex Exp. data
+tex $d=\SI{1.8}{\nano\metre}$
+tex ($\SI{50}{\nano\metre}$ substrate)

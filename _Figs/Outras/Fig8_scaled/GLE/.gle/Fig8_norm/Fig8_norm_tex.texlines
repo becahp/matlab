@@ -1,0 +1,12 @@
+tex {\scriptsize 0.0}
+tex {\scriptsize 0.5}
+tex {\scriptsize 1.0}
+tex {\tiny 1G}
+tex {\tiny FBG}
+tex {\tiny 2G}
+tex {\tiny 3G}
+tex {\footnotesize $V_{\rm DS}/V_{\rm sup}$}
+tex {\scriptsize 1.5}
+tex {\scriptsize 2.0}
+tex {\scriptsize 2.5}
+tex {\footnotesize $I_{\rm D}\,/\, \si{\ampere}$}

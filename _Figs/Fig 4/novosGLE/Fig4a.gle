@@ -1,0 +1,54 @@
+include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 0.5 0.72
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+set hei 0.8*text_height
+
+amove 0.4 0.2
+!amove 0.3 0
+
+begin graph
+	nobox 
+	fullsize
+
+	!c1= V_g, c2= I_s
+	data ../Data/Fig4a_d1.elpa ignore 2 d1=c1,c2
+	data ../Data/Fig4a_d2.elpa ignore 2 d2=c1,c2
+	data ../Data/Fig4a_d3.elpa ignore 2 d3=c1,c2
+	data ../Data/Fig4a_d4.elpa ignore 2 d4=c1,c2
+
+	!experimental
+	d1 marker circle msize 0.175 lwidth 0.015 color cfaedblue1$!rgb(0,0.5,0)
+	
+	d2 line lwidth 0.020000 lstyle 1  color cfaedred$ !rgb(0,0,1)
+    d3 line lwidth 0.020000 lstyle 1  color cfaedgreen1$!rgb(0,0.5,0)
+	d4 line lwidth 0.020000 lstyle 1  color cfaedgreen2$!rgb(1,0,0)
+	!d5 line lwidth 0.030000 lstyle 42  color rgb(0,0,0)
+    
+	
+	xlabels dist 0.05
+    ylabels dist 0.02 hei 0.6*text_height
+    xaxis lin min -1.5 max 1 dticks 1
+    yaxis log min 1e-12 max 1e-4 dticks 2
+    yaxis format "sci 0 10 expdigits 2 expsign"
+    
+	xtitle "$V_{\rm GS}\,/\,\si{\volt}$" adist 0.32
+    ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.790000 hei 0.8*text_height
+   
+
+end graph
+begin key
+    nobox
+    compact
+    position bl
+    offset 0.02 0.05
+    hei 0.3*text_height
+    llen 0.3
+	text "Dados exp." marker circle msize 0.175 color cfaedblue1$!rgb(0,0.5,0)
+	text "$d=\SI{1.8}{\nano\metre}$" line lwidth 0.020000 lstyle 1 color cfaedgreen2$!rgb(1,0,0)	
+	text "$d=\SI{2.4}{\nano\metre}$" line lwidth 0.020000 lstyle 1 color cfaedred$ !rgb(0,0,1)
+	text "$d=\SI{2.4}{\nano\metre}$ (BTB = 0)" line lwidth 0.020000 lstyle 1 color cfaedgreen1$!rgb(0,0.5,0)
+end key
