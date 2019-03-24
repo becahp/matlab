@@ -41,7 +41,7 @@ op1 = [];
 op2 = [];
 %%%%%%%%%
 
-aux = 33
+aux = 22
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% HP
@@ -256,8 +256,16 @@ h(2) = semilogy(Vg_FE,op2(1).I_d);
 
 
 %Descobrir Ion
+if aux == 1 || aux == 2 || aux == 3
 vg05 = find(op2(1).V_g == 0.5, 1);
-vgFE05 = find(Vg_FE >= 0.49, 1)
+vgFE05 = find(Vg_FE >= 0.49 & Vg_FE <= 0.499999999999999999, 1);
+end
+
+if aux == 11 || aux == 22 || aux == 221 || aux == 33
+vg05 = find(op2(1).V_g == 0.5, 1);
+vgFE05 = find(Vg_FE >= 0.49999999 & Vg_FE <= 0.51, 1);
+end
+
 
 idVg = op2(1).I_d(vg05);
 idFE = op2(1).I_d(vgFE05);

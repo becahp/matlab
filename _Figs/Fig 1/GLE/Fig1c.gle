@@ -1,7 +1,7 @@
 include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
 include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
 include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
-set_fig_size 1.0 0.78
+set_fig_size 1.4 0.78
 !set_fig_size 0.5 0.72
 include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
 include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
@@ -10,13 +10,14 @@ include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
 !amove 0.4 0.2
 !amove 0.3 0
 
+
 set hei text_height
 
-!amove 0.3 0.2
+!amove 0.4 0.2
 amove 0 0
 
 begin graph
-	nobox 
+	!nobox 
 	!fullsize
 
 	!c1= V_g, c2= I_s
@@ -60,65 +61,56 @@ begin graph
 	
 
 	
-	xlabels dist 0.0
+	xlabels dist 0.1
     xaxis log min 1e-12 max 1e-8 !dticks 1
     
 	yaxis color cfaedred$
-	ylabels dist 0.0 hei 0.1*text_height
+	ylabels dist 0.05 hei 0.5*text_height
 	yaxis log min 1e-16 max 1e-14 dticks 1
-    !yaxis format "sci 0 10 expdigits 2 expsign"
+    yaxis format "sci 0 10 expdigits 2 expsign"
 	
 	
 	y2axis color cfaedblue1$
-	y2labels dist 0.0 hei 0.1*text_height
-    y2axis log min 1e-15 max 1e-6 dticks 1
+	y2labels dist 0.05 hei 0.5*text_height
+	y2axis log min 1e-15 max 1e-6 dticks 1
 	y2places 1e-14 1e-12 1e-10 1e-8 1e-6
 	y2axis format "sci 0 10 expdigits 2 expsign"
 	
-	!ftick 1e-10 dticks 3 format "sci 0 10 expdigits 2 expsign" !procurar forma de definir primeiro tick		ftick -14 
-    !y2axis format "sci 0 10 expdigits 2 expsign"
     	
 	
 	xtitle "$\tau\,/\,\si{\second}$" adist 0.4
-    ytitle "$E_{\rm active}\,/\, \si{\joule\per\micro\metre}$" !adist 0.95 hei 0.8*text_height
-	y2title "$P_{\rm off}\,/\, \si{\watt\per ch}$" !adist 0.95 hei 0.8*text_height
-    
-	
+    y2title "$P_{\rm off}\,/\, \si{\watt\per\micro\metre}$" adist 0.95 hei 0.8*text_height
+    ytitle "$E_{\rm active}\,/\, \si{\joule\per\micro\metre}$" adist 0.95 hei 0.8*text_height
+
 end graph
 
-begin name ellipseCentro
-	amove 3.25 2.1
-	ellipse 2.1 0.4 fill rgba255(255,0,0,70)
-end name
 
-begin name ellipseTop
-	amove 1.7 3.5
-	ellipse 0.5 0.2 fill rgba255(0,0,255,70)
-end name
+amove 4.5 3.0
+ellipse 2.9 0.5 fill rgba255(255,0,0,70)
 
-begin name ellipseBot
-	amove 4.6 1.25
-	ellipse 0.75 0.35 fill rgba255(0,0,255,70)
-end name
+amove 2.4 4.85
+ellipse 0.9 0.25 fill rgba255(0,0,255,70)
+
+amove 6.55 1.74
+ellipse 1.0 0.45 fill rgba255(0,0,255,70)
 
 
-set hei 0.1*text_height
-amove xg(5e-12) yg(1.3e-15)
-aline xg(5e-12) yg(5e-15) arrow end
+set hei 0.8*text_height
+amove 2.1 3.3
+aline 2.1 4.6 arrow end
 
-rmove -0.6 -0.7
-begin box name titlebox add 0.05 fill white
+rmove -0.6 -0.95
+begin box name titlebox add 0.1 fill white
 write "Disconnect clock"
 end box
 
-amove xg(7e-9) yg(6.4e-16)
-aline xg(7e-9) yg(3.4e-16) arrow end
+amove 7.0 2.75
+aline 7.0 2.15 arrow end
 
-amove xg(2.5e-11) yg(4e-15)
-aline xg(1e-11) yg(3.1e-15) arrow end
+amove 3.55 4.3
+aline 2.85 4.1 arrow end
 
-rmove +0.45 +0.25
+rmove +0.8 +0.3
 tex "Reduced size increases"
-rmove 0.0 -0.2
+rmove 0.0 -0.25
 tex "dynamic power"
-
