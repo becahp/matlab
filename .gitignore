@@ -10,9 +10,8 @@
 
 # Folders
 image_to_eps/
-/.gle/
-**/.gle/**
-!Data/*.elpa
+**/.gle/
+!**/Data/*.elpa
 
 # Octave
 octave-workspace
