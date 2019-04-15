@@ -1,0 +1,35 @@
+include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 0.5 0.72
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+set hei 0.8*text_height
+
+!amove 0.4 0.2
+!amove 0.3 0
+amove 0.4 0.2
+
+begin graph
+	nobox 
+	!fullsize
+
+	!c1= V_g, c2= I_s
+	data ../Data/Fig4_d3.elpa ignore 2 d1=c1,c2
+	
+	d1 line lwidth 0.020000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
+	!d1 marker circle msize 0.15 lwidth 0.015 color cfaedblue1$!rgb(0,0.5,0)
+	
+	
+	
+	xlabels dist 0.02 hei 0.6*text_height
+    ylabels dist 0.02 hei 0.6*text_height
+    xaxis lin min -1.0 max 1.0 dticks 1
+    yaxis lin min 50 max 350 dticks 100
+    !yaxis format "sci 0 10 expdigits 2 expsign"
+    
+	xtitle "$V_{\rm BG}\,/\,\si{\volt}$" !adist 0.32
+    ytitle "$I_{\rm on}/I_{\rm off}$" !adist 0.790000 hei 0.6*text_height
+   
+end graph

@@ -146,4 +146,4 @@ legend({'vpg = |0.6|V','vpg = |0.8|V', 'vpg = |1.0|V'}, 'Location', 'best');
 
 legend('boxoff')
 
-print('var_vpg', '-depsc');
+%print('var_vpg', '-depsc');

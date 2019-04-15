@@ -77,12 +77,12 @@ op2 =  rdcelpa('LP/nLP_vpg_110_dd_iv.elpa','*',[],op2);
 %%%Data is accessed via names of the struct elements
 %%%Simple preprocessing of data can be done
 
-op2(1).I_d = abs(op2(1).I_d);
-op2(2).I_d = abs(op2(2).I_d);
-op2(3).I_d = abs(op2(3).I_d);
-op2(4).I_d = abs(op2(4).I_d);
-op2(5).I_d = abs(op2(5).I_d);
-op2(6).I_d = abs(op2(6).I_d);
+op2(1).I_d = abs(op2(1).I_s);
+op2(2).I_d = abs(op2(2).I_s);
+op2(3).I_d = abs(op2(3).I_s);
+op2(4).I_d = abs(op2(4).I_s);
+op2(5).I_d = abs(op2(5).I_s);
+op2(6).I_d = abs(op2(6).I_s);
 %op2(7).I_d = abs(op2(7).I_d);
 %op2(8).I_d = abs(op2(8).I_d);
 %op2(9).I_d = abs(op2(9).I_d);
@@ -146,4 +146,19 @@ legend({'vpg = |0.6|V','vpg = |0.8|V', 'vpg = |1.0|V'}, 'Location', 'best');
 
 legend('boxoff')
 
-print('var_vpg', '-depsc');
+%print('var_vpg', '-depsc');
+
+pule = 1
+if pule == 1
+for i=1:length(op2)
+str = num2str(i);
+
+elp.mat=[op2(i).V_g,op2(i).I_d];
+elp.var_names={'Vg','Id'};
+s = strcat('Fig_d',str);
+elp.title=s;
+
+save_elpa(['Data/',elp.title,'.elpa'],elp)
+end
+
+end

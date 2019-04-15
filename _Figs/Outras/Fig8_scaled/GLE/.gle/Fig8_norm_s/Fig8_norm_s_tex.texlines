@@ -1,9 +1,0 @@
-tex {\scriptsize 0.0}
-tex {\scriptsize 0.5}
-tex {\scriptsize 1.0}
-tex {\footnotesize $V_{\rm DS}/V_{\rm sup}$}
-tex {\tiny 3G}
-tex {\footnotesize $I_{\rm D}\,/\, \si{\micro\ampere}$}
-tex {\tiny s1G}
-tex {\tiny sFBG}
-tex {\tiny s2G}

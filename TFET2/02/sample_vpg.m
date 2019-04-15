@@ -51,7 +51,7 @@ addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\01_vpg\LP
 %%
 %%%Read data and store it in a struct
 op2 = [];	
-aux = 1
+aux = 2
 %%%%%%%%%
 
 if aux == 1

@@ -6,11 +6,12 @@ include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
 include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
 
 set hei 0.8*text_height
-x_add = 0	! ajuste de x para desenhar linhas auxiliares
 
-amove 0.4 0.2
+!amove 0.3 0.2
+amove 0.85 0.1
 
 begin graph
+   size 1.91 1.45
    nobox 
    fullsize
 
@@ -18,18 +19,22 @@ begin graph
    data ../Data/Fig5a_d1.elpa ignore 2 d1=c1,c2
    data ../Data/Fig5a_d2.elpa ignore 2 d2=c1,c2
    data ../Data/Fig5a_d3.elpa ignore 2 d3=c1,c2
+   data ../Data/Fig5a_d4.elpa ignore 2 d4=c1,c2
    
-	d1 line lwidth 0.020000 lstyle 1  !color rgb(0,0,0)
-	d2 line lwidth 0.020000 lstyle 1  color cfaedblue1$!rgb(0,0.5,0)
-    d3 line lwidth 0.020000 lstyle 1  color cfaedgreen2$!rgb(0,0,1)
+	d1 line lwidth 0.020000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
+	!d2 line lwidth 0.020000 lstyle 1 color cfaedgreen2$!rgb(0,0,1)
+    d3 line lwidth 0.020000 lstyle 1 color cfaedgreen2$
+    !d4 line lwidth 0.020000 lstyle 1 color cfaedgreen1$
   
-    xlabels dist 0.05
-    ylabels dist 0.02 hei 0.6*text_height
-    xaxis lin min -2 max 2 dticks 1
-    yaxis log min 1e-17 max 1e-4 dticks 2
+    xlabels dist 0.05 hei 0.2*text_height
+    ylabels dist 0.02 hei 0.2*text_height
+    
+	xaxis lin min 0 max 0.5 dticks 0.25
+    yaxis log min 4e-8 max 1e-5 dticks 1
 	yaxis format "sci 0 10 expdigits 2 expsign"
-    xtitle "$V_{\rm GS}\,/\,\si{\volt}$" adist 0.32
-    ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.790000 hei 0.8*text_height
+	
+    xtitle "$V_{\rm G}\,/\,\si{\volt}$" adist 0.2 hei 0.6*text_height !adist 0.32
+    ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.78 hei 0.3*text_height !hei 0.8*text_height
 
 end graph
 begin key
@@ -39,14 +44,9 @@ begin key
     offset 0.0 0.05
     hei 0.4*text_height
     llen 0.3
-    text  "$d_{\rm p}$=\SI{100}{\nano\meter}" line lwidth 0.020000 lstyle 1 !color rgb(0,0,0)
-    text  "$d_{\rm p}$=\SI{50}{\nano\meter}"  line lwidth 0.020000 lstyle 1  color cfaedblue1$!rgb(0,0.5,0)
-    text  "$d_{\rm p}$=\SI{25}{\nano\meter}"  line lwidth 0.020000 lstyle 1  color cfaedgreen2$!rgb(0.75,0,0.75)
+    text  "mmFET"    line lwidth 0.020000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
+    !text  "$\alpha$=0.4"  line lwidth 0.020000 lstyle 1 color cfaedgreen2$!rgb(0,0,1)
+    text  "mmNCFET"  line lwidth 0.020000 lstyle 1 color cfaedgreen2$
+    !text  "$\alpha$=0.6"  line lwidth 0.020000 lstyle 1 color cfaedgreen1$
+		
 end key
-
-
-amove xg(-1) 0.8
-aline xg(-1) 2.1 arrow end
-rmove -0.1 -0.15
-set hei 0.4*text_height
-!tex "$d_{\rm p}$"
