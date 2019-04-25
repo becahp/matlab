@@ -33,3 +33,8 @@ begin graph
     ytitle "$I_{\rm on}/I_{\rm off}$" adist 0.7 hei 0.6*text_height
    
 end graph
+
+set color black
+set hei 0.6*text_height
+amove xg(-0.85) yg(2.8e7)
+tex "LP"

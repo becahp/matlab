@@ -50,9 +50,60 @@ begin key
     !offset 0.0 0.05
     
 	offset 0.01 0.35 !0.01 0.1
-    hei 0.6*text_height
-    llen 0.4
+    hei 0.5*text_height
+    llen 0.3
     text  "mmFET"    line lwidth 0.030000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
     text  "mmNCFET"  line lwidth 0.030000 lstyle 1 color cfaedgreen2$
    	
 end key
+
+set color black
+set hei 0.6*text_height
+
+!------------------------------Setas
+amove xg(-0.99) yg(1.2e-7)
+aline xg(-0.65) yg(1.2e-7) arrow end
+rmove -0.65 +0.05
+tex "NC"
+
+amove xg(+0.99) yg(1.2e-5)
+aline xg(+0.5) yg(1.2e-5) arrow end
+rmove +0.4 +0.05
+tex "NC"
+
+
+!------------------------------Box
+set color gray
+set color rgba255(192,192,192,20)
+amove xg(-0.49) yg(5.5e-5)
+box  1.46 -2.81 fill rgba255(192,192,192,70)
+
+
+!------------------------------Texto
+set color black
+set hei 0.6*text_height
+amove xg(0.22) yg(2.1e-5)
+tex "HP"
+
+amove xg(-0.7) yg(2.1e-5)
+tex "LP"
+
+amove xg(-0.41) yg(5e-6)
+tex "transient"
+rmove +0.15 -0.2
+tex "region"
+
+!------------------------------Setas
+set lwidth 0.05
+amove xg(-0.5) yg(2e-10)
+aline xg(-0.5) yg(5e-5)
+
+amove xg(+0.19) yg(2e-10)
+aline xg(+0.19) yg(5e-5)
+
+
+set lwidth 0.04
+amove xg(+0.21) yg(1.3e-5)
+aline xg(+0.43) yg(1.3e-5) arrow end
+amove xg(-0.52) yg(1.3e-5)
+aline xg(-0.74) yg(1.3e-5) arrow end

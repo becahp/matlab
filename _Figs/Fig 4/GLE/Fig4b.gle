@@ -33,3 +33,9 @@ begin graph
     ytitle "$V_{\rm th}\,/\, \si{\volt}$" !adist 0.790000 hei 0.6*text_height
    
 end graph
+
+
+set color black
+set hei 0.6*text_height
+amove xg(-0.85) yg(0.37)
+tex "LP"

@@ -30,10 +30,10 @@ begin graph
     ylabels dist 0.02 hei 0.3*text_height
     
 	xaxis lin min 0 max 0.5 dticks 0.25
-    yaxis log min 4e-8 max 1e-5 dticks 1
+    yaxis log min 4e-8 max 2e-5 dticks 1
 	yaxis format "sci 0 10 expdigits 2 expsign"
 	
-    xtitle "$V_{\rm G}\,/\,\si{\volt}$" adist 0.2 hei 0.6*text_height !adist 0.32
+    xtitle "$V_{\rm GS}\,/\,\si{\volt}$" adist 0.2 hei 0.6*text_height !adist 0.32
     ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.78 hei 0.3*text_height !hei 0.8*text_height
 
 end graph
@@ -50,3 +50,10 @@ begin key
     text  "$\alpha$=0.6"  line lwidth 0.020000 lstyle 1 color cfaedred$
 		
 end key
+
+
+!------------------------------Texto
+set color black
+set hei 0.6*text_height
+amove xg(0.39) yg(2.2e-6)
+tex "HP"

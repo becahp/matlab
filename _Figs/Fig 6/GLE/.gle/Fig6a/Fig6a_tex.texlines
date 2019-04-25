@@ -9,5 +9,10 @@ tex {\footnotesize 0.0}
 tex {\footnotesize 0.5}
 tex {\footnotesize 1.0}
 tex {\normalsize $V_{\rm PG}\,/\,\si{\volt}$}
-tex {\scriptsize mmFET}
-tex {\scriptsize mmNCFET}
+tex {\tiny mmFET}
+tex {\tiny mmNCFET}
+tex {\scriptsize HP}
+tex {\scriptsize LP}
+tex {\scriptsize transient}
+tex {\scriptsize NC}
+tex {\scriptsize region}

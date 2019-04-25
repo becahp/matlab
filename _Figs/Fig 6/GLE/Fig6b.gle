@@ -1,0 +1,103 @@
+include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 1.0 0.78
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+set hei text_height
+
+amove 0.4 0.1
+
+
+begin graph
+   nobox 
+   !fullsize
+
+   !c1= V_g, c2= I_s
+   data ../Data/Fig6a_d1.elpa ignore 2 d1=c1,c2
+   data ../Data/Fig6a_d2.elpa ignore 2 d2=c1,c2
+   
+	d1 line lwidth 0.030000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
+    d2 line lwidth 0.030000 lstyle 1 color cfaedgreen2$
+     
+    !xlabels dist 0.05 hei 0.3*text_height
+    !ylabels dist 0.02 hei 0.3*text_height
+    
+	!xaxis lin min 0 max 0.5 dticks 0.25
+    !yaxis log min 1e-15 max 1e-7 dticks 7
+	!xplaces 1e-15 1e-7
+	!yaxis format "sci 0 10 expdigits 2 expsign"
+	
+    !xtitle "$V_{\rm G}\,/\,\si{\volt}$" hei 0.6*text_height !adist 0.32
+    !ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.5 hei 0.3*text_height !hei 0.8*text_height
+
+
+	xlabels dist 0.1
+	ylabels dist 0.05 !hei 0.6*text_height
+	xaxis lin min -1 max 1 dticks 0.5
+	yaxis log min 1e-10 max 1e-4 dticks 2
+	yaxis format "sci 0 10 expdigits 2 expsign"
+	xtitle "$V_{\rm PG}\,/\,\si{\volt}$" adist 0.4
+	ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.95 !hei 0.8*text_height
+
+
+end graph
+begin key
+    nobox
+    compact
+    position br
+    !offset 0.0 0.05
+    
+	offset 0.01 0.35 !0.01 0.1
+    hei 0.5*text_height
+    llen 0.3
+    text  "mmFET"    line lwidth 0.030000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
+    text  "mmNCFET"  line lwidth 0.030000 lstyle 1 color cfaedgreen2$
+   	
+end key
+
+set color black
+set hei 0.6*text_height
+
+!------------------------------Setas
+amove xg(-0.99) yg(1.2e-7)
+aline xg(-0.65) yg(1.2e-7) arrow end
+rmove -0.65 +0.05
+tex "NC"
+
+amove xg(+0.99) yg(1.2e-5)
+aline xg(+0.5) yg(1.2e-5) arrow end
+rmove +0.4 +0.05
+tex "NC"
+
+
+!------------------------------Box
+!set color gray
+set color rgba255(192,192,192,20)
+amove xg(-0.49) yg(5.5e-5)
+box  1.46 -2.81 fill rgba255(192,192,192,70)
+
+
+!------------------------------Texto
+set color black
+set hei 0.6*text_height
+amove xg(0.22) yg(2.1e-5)
+tex "HP"
+
+amove xg(-0.7) yg(2.1e-5)
+tex "LP"
+
+amove xg(-0.41) yg(5e-6)
+tex "transient"
+rmove +0.15 -0.2
+tex "region"
+
+!------------------------------Setas
+
+
+set lwidth 0.04
+amove xg(+0.21) yg(1.3e-5)
+aline xg(+0.43) yg(1.3e-5) arrow end
+amove xg(-0.52) yg(1.3e-5)
+aline xg(-0.74) yg(1.3e-5) arrow end
