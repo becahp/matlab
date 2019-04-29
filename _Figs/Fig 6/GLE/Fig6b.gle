@@ -38,7 +38,7 @@ begin graph
 	xaxis lin min -1 max 1 dticks 0.5
 	yaxis log min 1e-10 max 1e-4 dticks 2
 	yaxis format "sci 0 10 expdigits 2 expsign"
-	xtitle "$V_{\rm PG}\,/\,\si{\volt}$" adist 0.4
+	xtitle "$V_{\rm PG}\,/\,\si{\volt}$" adist 0.4 
 	ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.95 !hei 0.8*text_height
 
 
@@ -57,7 +57,7 @@ begin key
    	
 end key
 
-set color black
+set color cfaedorange$ 
 set hei 0.6*text_height
 
 !------------------------------Setas
@@ -83,10 +83,10 @@ box  1.46 -2.81 fill rgba255(192,192,192,70)
 set color black
 set hei 0.6*text_height
 amove xg(0.22) yg(2.1e-5)
-tex "HP"
+!tex "HP"
 
 amove xg(-0.7) yg(2.1e-5)
-tex "LP"
+!tex "LP"
 
 amove xg(-0.41) yg(5e-6)
 tex "transient"
@@ -97,7 +97,12 @@ tex "region"
 
 
 set lwidth 0.04
-amove xg(+0.21) yg(1.3e-5)
-aline xg(+0.43) yg(1.3e-5) arrow end
-amove xg(-0.52) yg(1.3e-5)
-aline xg(-0.74) yg(1.3e-5) arrow end
+amove xg(+0.21) yg(5e-7)
+aline xg(+0.43) yg(5e-7) arrow end
+rmove -0.4 +0.15
+tex "HP"
+
+amove xg(-0.52) yg(5e-7)
+aline xg(-0.74) yg(5e-7) arrow end
+rmove +0.15 +0.15
+tex "LP"

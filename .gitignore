@@ -10,7 +10,7 @@
 
 # Folders
 image_to_eps/
-.gle/
+**/.gle/
 **/GLE/.gle/
 !**/Data/*.elpa
 

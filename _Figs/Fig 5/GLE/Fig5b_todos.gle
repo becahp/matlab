@@ -44,11 +44,11 @@ begin key
     position br
     offset 0.0 0.05
     hei 0.4*text_height
-    llen 0.3
+    llen 0.2
     text  "mmFET"    line lwidth 0.020000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
-    text  "$\alpha$=0.4"  line lwidth 0.020000 lstyle 1 color cfaedgreen1$!rgb(0,0,1)
-    text  "$\alpha$=0.5"  line lwidth 0.020000 lstyle 1 color cfaedgreen2$
-    text  "$\alpha$=0.6"  line lwidth 0.020000 lstyle 1 color cfaedred$
+    text  "$\lvert \alpha \rvert \epsilon$=0.4 "  line lwidth 0.020000 lstyle 1 color cfaedgreen1$!rgb(0,0,1)
+    text  "$\lvert \alpha \rvert \epsilon$=0.5 "  line lwidth 0.020000 lstyle 1 color cfaedgreen2$
+    text  "$\lvert \alpha \rvert \epsilon$=0.6 "  line lwidth 0.020000 lstyle 1 color cfaedred$
 		
 end key
 
