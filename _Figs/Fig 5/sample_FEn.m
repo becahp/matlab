@@ -45,7 +45,7 @@ op2 = [];
 aux = 11
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% HP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HP
 %vbg = -1V
 %vpg = 1V
 if aux == 1 %vbg = inverso com vds 0.5V
@@ -65,7 +65,7 @@ if aux == 3 %vbg = inverso com vds 0.5V
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\03_backgate\HP\nHP_BG_010
 end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% LP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LP
 %vbg = 1V
 %vpg = -1V
 if aux == 11 %vbg = inverso com vds 0.5V NLP
@@ -245,7 +245,7 @@ end
 
 
 %-------------------------------------------------------------------------------------------------------------------------------------
-if aux == 2
+if aux == 2000
 elp.mat=[op2(1).V_g,op2(1).I_d];
 elp.var_names={'V_g','I_d'};
 elp.title='Fig5a_d1';
@@ -267,7 +267,7 @@ elp.title='Fig5a_d4';
 save_elpa(['Data/',elp.title,'.elpa'],elp)
 end
 
-if aux == 11
+if aux == 1100
 elp.mat=[op2(1).V_g,op2(1).I_d];
 elp.var_names={'V_g','I_d'};
 elp.title='Fig5b_d1';
@@ -292,6 +292,58 @@ end
 
 %-------------------------------------------------------------------------------------------------------------------------------------
 pule = 1;
+if pule == 2231
+op2(1).I_s = abs(op2(1).I_s);
+figure
+h(1) = semilogy(op2(1).V_g,op2(1).I_s);
+hold
+h(2) = semilogy(Vg_FE2,op2(1).I_s);
+
+
+figure
+h(1) = semilogy(op2(1).V_g,op2(1).I_d);
+hold
+h(2) = semilogy(Vg_FE2,op2(1).I_d);
+
+%aux = 22
+%(i)	Ioff=ID(VGS=0V) para 	VPG=-1V, (LP), VBG=0V 		e alpha=0.5 (NC)
+vgFE05 = find(Vg_FE2 <= 0 , 1);
+idFE2= op2(1).I_s(vgFE05);
+
+%aux = 22
+%(ii) 	Ion=ID(VGS=0.5V) para 	VPG=-1V, (LP), VBG=0V 		e alpha=0.5 (NC)
+vgFE05 = find(Vg_FE2 >= 0.49999 & Vg_FE2 <= 0.505, 1);
+idFE2= op2(1).I_s(vgFE05);
+
+%aux = 11
+%(Iiii) 	Ioff=ID(VGS=0V) para 	VPG=-1V, (LP), VBG=1V (FBB) 	e alpha=0.5 (NC)
+vgFE05 = find(Vg_FE2 <= 0 , 1);
+idFE2= op2(1).I_s(vgFE05);
+
+%(iv) 	Ion=ID(VGS=0.5V) para 	VPG=-1V, (LP), VBG=1V (FBB) 	e alpha=0.5 (NC)
+
+
+%aux = 2
+%(v) 	Ioff=ID(VGS=0V) para 	VPG=+1V, (HP), VBG=0V 		e alpha=0.5 (NC)
+vgFE05 = find(Vg_FE2 <= 0 , 1);
+idFE2= op2(1).I_d(vgFE05);
+
+%aux = 2
+%(vi) 	Ion=ID(VGS=0.5V) para 	VPG=+1V, (HP), VBG=0V 		e alpha=0.5 (NC)
+vgFE05 = find(Vg_FE2 >= 0.49999 & Vg_FE2 <= 0.505, 1);
+idFE2= op2(1).I_d(vgFE05);
+
+%aux = 3
+%(vii) 	Ioff=ID(VGS=0V) para 	VPG=+1V, (HP), VBG=1V (FBB) 	e alpha=0.5 (NC)
+vgFE05 = find(Vg_FE2 <= 0 , 1);
+idFE2= op2(1).I_d(vgFE05);
+
+%aux = 3
+%(viii) Ion=ID(VGS=0.5V) para 	VPG=+1V, (HP), VBG=1V (FBB) 	e alpha=0.5 (NC)
+vgFE05 = find(Vg_FE2 >= 0.49999 & Vg_FE2 <= 0.505, 1);
+idFE2= op2(1).I_d(vgFE05);
+
+end
 if pule == 0
 figure
 h(1) = semilogy(op2(1).V_g,op2(1).I_d);
