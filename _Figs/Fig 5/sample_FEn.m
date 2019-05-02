@@ -293,6 +293,11 @@ end
 %-------------------------------------------------------------------------------------------------------------------------------------
 pule = 1;
 if pule == 2231
+%--------------------------------------------
+vgFE05 = find(Vg_FE2 >= 0.49999 & Vg_FE2 <= 0.505, 1);
+novoVgs = op2(1).V_g(vgFE05);
+
+%--------------------------------------------
 op2(1).I_s = abs(op2(1).I_s);
 figure
 h(1) = semilogy(op2(1).V_g,op2(1).I_s);
@@ -320,8 +325,10 @@ idFE2= op2(1).I_s(vgFE05);
 vgFE05 = find(Vg_FE2 <= 0 , 1);
 idFE2= op2(1).I_s(vgFE05);
 
+%aux = 11
 %(iv) 	Ion=ID(VGS=0.5V) para 	VPG=-1V, (LP), VBG=1V (FBB) 	e alpha=0.5 (NC)
-
+vgFE05 = find(Vg_FE2 >= 0.49999 & Vg_FE2 <= 0.505, 1);
+idFE2= op2(1).I_s(vgFE05);
 
 %aux = 2
 %(v) 	Ioff=ID(VGS=0V) para 	VPG=+1V, (HP), VBG=0V 		e alpha=0.5 (NC)

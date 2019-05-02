@@ -62,7 +62,7 @@ begin graph
 
 	
 	xlabels dist 0.0
-    xaxis log min 1e-12 max 2e-8 !dticks 1
+    xaxis log min 1e-11 max 2e-7 !dticks 1
     
 	yaxis color cfaedred$
 	ylabels dist 0.0 hei 0.5*text_height
@@ -125,7 +125,7 @@ end name
 !--------------------Box cinza direita
 !set color gray
 set color rgba255(192,192,192,20) !rgb(192,192,192)
-amove xg(4.4e-10) yg(2.1e-15)
+amove xg(4.4e-9) yg(2.1e-15)
 box  2.2 -2.6 fill rgba255(192,192,192,70)
 
 set color black
@@ -136,19 +136,19 @@ tex "LP"
 !--------------------Box cinza esquerda
 !set color gray
 set color rgba255(192,192,192,20)
-amove xg(1.25e-12) yg(9.2e-15)
+amove xg(1.25e-11) yg(9.2e-15)
 box  1.9 -2.75 fill rgba255(192,192,192,70)
 
 set color black
 set hei 0.6*text_height
-amove xg(1.45e-12) yg(5.4e-16)
+amove xg(1.45e-11) yg(5.4e-16)
 tex "HP"
 
 !--------------------Setas no meio
 set color black
 set lwidth 0.05
-amove xg(5.5e-10) yg(1.2e-15)
-aline xg(2e-11) yg(1.2e-15) arrow end
+amove xg(5.5e-9) yg(1.2e-15)
+aline xg(2e-10) yg(1.2e-15) arrow end
 
 set color rgb255(255,0,0)	
 set hei 0.6*text_height
@@ -156,8 +156,8 @@ rmove -0.3 +0.35
 tex "Increasing performance"
 
 set color black
-amove xg(2e-11) yg(6.5e-16) 
-aline xg(5.5e-10) yg(6.5e-16) arrow end
+amove xg(2e-10) yg(6.5e-16) 
+aline xg(5.5e-9) yg(6.5e-16) arrow end
 
 set color rgb255(0,0,255)
 set hei 0.6*text_height

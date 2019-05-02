@@ -85,9 +85,10 @@ ymmfet2 = [9.42E-17 	9.42E-17 	9.42E-17 	9.42E-17];
 % dividir x por 10
 % multiplicar y por 10
 
-xnano = xnano/10;
-xtfet = xtfet/10;
-xmmfet = xmmfet./10;
+%% não precisa dividir o x por 10
+%xnano = xnano/10;
+%xtfet = xtfet/10;
+%xmmfet = xmmfet./10;
 
 ynano1 = 10*ynano1;
 ytfet1 = 10*ytfet1;
@@ -96,6 +97,8 @@ ytfet2 = 10*ytfet2;
 ymmfet1= 10 .* ymmfet1;
 ymmfet2= 10 .* ymmfet2;
 
+pule = 1
+if pule == 1
 elp.mat=[xnano',ynano1'];
 elp.var_names={'x','y'};
 elp.title='Fig1_d1';
@@ -142,7 +145,7 @@ elp.title=s;
 save_elpa(['Data/',elp.title,'.elpa'],elp)
 
 end
-
+end
 %h(1) = loglog(xnano,ynano1,'s');
 %h(2) = loglog(xtfet,ytfet1, '+');
 %h(3) = loglog(xmmfet,ymmfet1, 'd');
@@ -192,8 +195,8 @@ h(6) = loglog(xmmfet,ymmfet2, 'd');
 ylabel('E_{\rm L} (J/um)')
 ylim([1e-16 5e-15]) %ylim([1e-17 5e-16])
 
-xlabel('\tau (s)')
-xlim([1e-12 1e-8])
+xlabel('\tau_{\rm LH} (s)')
+xlim([1e-11 1e-7])
 ax = gca;
 ax.XTick = [1e-12 1e-11 1e-10 1e-9 1e-8];
 
