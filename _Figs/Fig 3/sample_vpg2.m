@@ -46,6 +46,7 @@ map = [0, 0, 1
 
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\01_vpg\HP
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\01_vpg\LP
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\02_otimizacao\01_vpg\LP1
 
 
 %%
@@ -66,9 +67,14 @@ op2 =  rdcelpa('HP/nHP_vpg_010_dd_iv.elpa','*',[],op2);
 %op2 =  rdcelpa('LP/nLP_vpg_000_dd_iv.elpa','*',[],op2);
 %op2 =  rdcelpa('LP/nLP_vpg_102_dd_iv.elpa','*',[],op2);
 %op2 =  rdcelpa('LP/nLP_vpg_104_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('LP/nLP_vpg_106_dd_iv.elpa','*',[],op2);
+
+%op2 =  rdcelpa('LP/nLP_vpg_106_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('LP1/nLP_vpg_106_BG_010_dd_iv.elpa','*',[],op2);
+
 op2 =  rdcelpa('LP/nLP_vpg_108_dd_iv.elpa','*',[],op2);
-op2 =  rdcelpa('LP/nLP_vpg_110_dd_iv.elpa','*',[],op2);
+
+%op2 =  rdcelpa('LP/nLP_vpg_110_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('LP1/nLP_vpg_110_BG_010_dd_iv.elpa','*',[],op2);
 
 
 
@@ -148,7 +154,7 @@ legend('boxoff')
 
 %print('var_vpg', '-depsc');
 
-pule = 1
+pule = 0
 if pule == 1
 for i=1:length(op2)
 str = num2str(i);

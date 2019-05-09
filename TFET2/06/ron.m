@@ -46,10 +46,11 @@ map = [0, 0, 1
 
 	
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\06_Ron
+addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET2\06_Ron\05_nc
 %%
 %%%Read data and store it in a struct
 op2 = [];		
-aux = 4
+aux = 5
 
 if aux == 0
 op2 =  rdcelpa('nFET_saida_dd_iv.elpa','*',[],op2);
@@ -72,6 +73,14 @@ end
 if aux == 4 %vbg = +1V
 op2 =  rdcelpa('nHP_vbg010_s_dd_iv.elpa','*',[],op2);
 op2 =  rdcelpa('nLP_vbg010_s_dd_iv.elpa','*',[],op2);
+end
+
+if aux == 5
+op2 =  rdcelpa('05_nc\nHP_vbg0_vpg1_s_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('05_nc\nHP_vbg1_vpg1_s_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('05_nc\nLP_vbg0_vpg11_s_dd_iv.elpa','*',[],op2);
+op2 =  rdcelpa('05_nc\nLP_vbg1_vpg11_s_dd_iv.elpa','*',[],op2);
+
 end
 
 %%
