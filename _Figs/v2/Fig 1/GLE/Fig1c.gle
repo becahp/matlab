@@ -1,0 +1,116 @@
+include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 1.4 0.78
+!set_fig_size 0.5 0.72
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+!set hei 0.8*text_height
+!amove 0.4 0.2
+!amove 0.3 0
+
+
+set hei text_height
+
+!amove 0.4 0.2
+amove 0 0
+
+begin graph
+	!nobox 
+	!fullsize
+
+	!c1= V_g, c2= I_s
+	data ../Data/Fig1_d1.elpa ignore 2 d1=c1,c2 	![xnano',ynano1']
+	data ../Data/Fig1_d2.elpa ignore 2 d2=c1,c2		![xtfet',ytfet1']
+	data ../Data/Fig1_1.elpa ignore 2 d3=c1,c2		!HP/-1
+	data ../Data/Fig1_2.elpa ignore 2 d4=c1,c2		!LP/1
+	data ../Data/Fig1_3.elpa ignore 2 d5=c1,c2		!HP/0
+	data ../Data/Fig1_4.elpa ignore 2 d6=c1,c2		!LP/0
+	
+	data ../Data/Fig2_d1.elpa ignore 2 d7=c1,c2		![xnano',ynano2']
+	data ../Data/Fig2_d2.elpa ignore 2 d8=c1,c2		![xtfet',ytfet2']
+	data ../Data/Fig2_1.elpa ignore 2 d9=c1,c2		!HP/-1	
+	data ../Data/Fig2_2.elpa ignore 2 d10=c1,c2		!LP/1
+	data ../Data/Fig2_3.elpa ignore 2 d11=c1,c2		!HP/0
+	data ../Data/Fig2_4.elpa ignore 2 d12=c1,c2		!LP/0
+	
+	
+	d1 marker square y2axis msize 0.175 lwidth 0.015 color cfaedblue1$!rgb(0,0.5,0)	
+	d2 marker plus y2axis msize 0.175 lwidth 0.015 color cfaedblue1$ !rgb(0,0,1)
+	d3 marker fdiamond y2axis msize 0.175 lwidth 0.015 color cfaedblue1$!rgb(0,0.5,0)
+	d4 marker fdiamond y2axis msize 0.175 lwidth 0.015 color cfaedblue1$!rgb(0,0.5,0)	
+	d5 marker wdiamond y2axis msize 0.175 lwidth 0.015 color cfaedblue1$ !rgb(0,0,1)
+	d6 marker wdiamond y2axis msize 0.175 lwidth 0.015 color cfaedblue1$!rgb(0,0.5,0)
+	
+	
+	
+	d7 marker square msize 0.175 lwidth 0.015 color cfaedred$!rgb(0,0.5,0)	
+	d8 marker plus msize 0.175 lwidth 0.015 color cfaedred$ !rgb(0,0,1)
+	d9 marker fdiamond msize 0.175 lwidth 0.015 color cfaedred$!rgb(0,0.5,0)
+	d10 marker fdiamond msize 0.175 lwidth 0.015 color cfaedred$!rgb(0,0.5,0)	
+	d11 marker wdiamond msize 0.175 lwidth 0.015 color cfaedred$ !rgb(0,0,1)
+	d12 marker wdiamond msize 0.175 lwidth 0.015 color cfaedred$!rgb(0,0.5,0)
+	
+	
+	!d4 marker square msize 0.175 lwidth 0.015 color cfaedblue2$!rgb(0,0.5,0)	
+	!d5 marker square msize 0.175 lwidth 0.015 color cfaedyellow$ !rgb(0,0,1)
+	!d6 marker square msize 0.175 lwidth 0.015 color cfaedgreen2$!rgb(0,0.5,0)
+	
+	!d3 line lwidth 0.030000 lstyle 1  color cfaedred$ !rgb(0,0,1)
+	
+
+	
+	xlabels dist 0.1
+    xaxis log min 1e-12 max 1e-8 !dticks 1
+    
+	yaxis color cfaedred$
+	ylabels dist 0.05 hei 0.5*text_height
+	yaxis log min 1e-16 max 1e-14 dticks 1
+    yaxis format "sci 0 10 expdigits 2 expsign"
+	
+	
+	y2axis color cfaedblue1$
+	y2labels dist 0.05 hei 0.5*text_height
+	y2axis log min 1e-15 max 1e-6 dticks 1
+	y2places 1e-14 1e-12 1e-10 1e-8 1e-6
+	y2axis format "sci 0 10 expdigits 2 expsign"
+	
+    	
+	
+	xtitle "$\tau\,/\,\si{\second}$" adist 0.4
+    y2title "$P_{\rm off}\,/\, \si{\watt\per\micro\metre}$" adist 0.95 hei 0.8*text_height
+    ytitle "$E_{\rm active}\,/\, \si{\joule\per\micro\metre}$" adist 0.95 hei 0.8*text_height
+
+end graph
+
+
+amove 4.5 3.0
+ellipse 2.9 0.5 fill rgba255(255,0,0,70)
+
+amove 2.4 4.85
+ellipse 0.9 0.25 fill rgba255(0,0,255,70)
+
+amove 6.55 1.74
+ellipse 1.0 0.45 fill rgba255(0,0,255,70)
+
+
+set hei 0.8*text_height
+amove 2.1 3.3
+aline 2.1 4.6 arrow end
+
+rmove -0.6 -0.95
+begin box name titlebox add 0.1 fill white
+write "Disconnect clock"
+end box
+
+amove 7.0 2.75
+aline 7.0 2.15 arrow end
+
+amove 3.55 4.3
+aline 2.85 4.1 arrow end
+
+rmove +0.8 +0.3
+tex "Reduced size increases"
+rmove 0.0 -0.25
+tex "dynamic power"

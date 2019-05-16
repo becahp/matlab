@@ -1,19 +1,18 @@
 include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
 include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
 include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
-set_fig_size 0.5 0.72
+set_fig_size 0.5 0.78
 include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
 include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
 
 set hei 0.8*text_height
 
-!amove 0.4 0.2
-amove 0.85 0.1
+amove 0.4 0.2
+!amove 0.85 0.1
 
 begin graph
-   size 1.91 1.45
    nobox 
-   fullsize
+   scale 0.65 0.65, noborder !fullsize
 
    !c1= V_g, c2= I_s
    data ../Data/Fig5b_d1.elpa ignore 2 d1=c1,c2
@@ -26,16 +25,16 @@ begin graph
     d3 line lwidth 0.020000 lstyle 1 color cfaedgreen2$
     d4 line lwidth 0.020000 lstyle 1 color cfaedred$
   
-    xlabels dist 0.05 hei 0.3*text_height
-    ylabels dist 0.02 hei 0.3*text_height
+    xlabels dist 0.05 !hei 0.6*text_height
+    ylabels dist 0.02 hei 0.6*text_height
     
 	xaxis lin min 0 max 0.5 dticks 0.25
     yaxis log min 1e-15 max 2e-8 dticks 2
 	!xplaces 1e-15 1e-7
 	yaxis format "sci 0 10 expdigits 2 expsign"
 	
-    xtitle "$V_{\rm GS}\,/\,\si{\volt}$" adist 0.2 hei 0.6*text_height !adist 0.32
-    ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.78 hei 0.3*text_height !hei 0.8*text_height !adist 0.5
+    xtitle "$V_{\rm GS}\,/\,\si{\volt}$" adist 0.26 !hei 0.6*text_height !adist 0.32
+    ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.76 !hei 0.3*text_height !hei 0.8*text_height !adist 0.5
 
 end graph
 begin key
@@ -54,6 +53,6 @@ end key
 
 !------------------------------Texto
 set color black
-set hei 0.6*text_height
+set hei 0.8*text_height
 amove xg(0.05) yg(2e-10)
 tex "LP"

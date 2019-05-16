@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=latex 2019.3.21)  25 APR 2019 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000) (preloaded format=latex 2019.3.21)  13 MAY 2019 18:30
 entering extended mode
 **./texpreamble.tex
 (texpreamble.tex
 LaTeX2e <2018-12-01>
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/base\size10.clo"
 File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -20,49 +20,49 @@ File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: dvips.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\dvips.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/graphics-def\dvips.def"
 File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\color.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: dvips.def on input line 147.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\dvipsnam.def"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/graphics\dvipsnam.def"
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
 Package: amsmath 2018/12/01 v2.17b AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
 \ex@=\dimen103
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen104
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count88
@@ -103,23 +103,24 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/siunitx\siunitx.sty"
-("C:\Program Files\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty"
-Package: expl3 2019-03-05 L3 programming layer (loader) 
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/siunitx\siunitx.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/l3kernel\expl3.sty"
+Package: expl3 2019-05-09 L3 programming layer (loader) 
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/l3kernel\expl3-code.tex"
-Package: expl3 2019-03-05 L3 programming layer (code)
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/l3kernel\expl3-code.tex"
+Package: expl3 2019-05-09 L3 programming layer (code)
 \c_max_int=\count100
 \l_tmpa_int=\count101
 \l_tmpb_int=\count102
 \g_tmpa_int=\count103
 \g_tmpb_int=\count104
 \g__kernel_prg_map_int=\count105
-\c_log_iow=\count106
-\l_iow_line_count_int=\count107
-\l__iow_line_target_int=\count108
-\l__iow_one_indent_int=\count109
-\l__iow_indent_int=\count110
+\c__ior_term_ior=\count106
+\c_log_iow=\count107
+\l_iow_line_count_int=\count108
+\l__iow_line_target_int=\count109
+\l__iow_one_indent_int=\count110
+\l__iow_indent_int=\count111
 \c_zero_dim=\dimen112
 \c_max_dim=\dimen113
 \l_tmpa_dim=\dimen114
@@ -138,78 +139,78 @@ Package: expl3 2019-03-05 L3 programming layer (code)
 \l_tmpb_muskip=\muskip14
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
-\l_keys_choice_int=\count111
-\l__intarray_loop_int=\count112
+\l_keys_choice_int=\count112
+\l__intarray_loop_int=\count113
 \c__intarray_sp_dim=\dimen118
-\g__intarray_font_int=\count113
-\c__fp_leading_shift_int=\count114
-\c__fp_middle_shift_int=\count115
-\c__fp_trailing_shift_int=\count116
-\c__fp_big_leading_shift_int=\count117
-\c__fp_big_middle_shift_int=\count118
-\c__fp_big_trailing_shift_int=\count119
-\c__fp_Bigg_leading_shift_int=\count120
-\c__fp_Bigg_middle_shift_int=\count121
-\c__fp_Bigg_trailing_shift_int=\count122
-\c__kernel_randint_max_int=\count123
-\g__fp_array_int=\count124
-\l__fp_array_loop_int=\count125
-\l__sort_length_int=\count126
-\l__sort_min_int=\count127
-\l__sort_top_int=\count128
-\l__sort_max_int=\count129
-\l__sort_true_max_int=\count130
-\l__sort_block_int=\count131
-\l__sort_begin_int=\count132
-\l__sort_end_int=\count133
-\l__sort_A_int=\count134
-\l__sort_B_int=\count135
-\l__sort_C_int=\count136
-\l__tl_analysis_normal_int=\count137
-\l__tl_analysis_index_int=\count138
-\l__tl_analysis_nesting_int=\count139
-\l__tl_analysis_type_int=\count140
-\l__regex_internal_a_int=\count141
-\l__regex_internal_b_int=\count142
-\l__regex_internal_c_int=\count143
-\l__regex_balance_int=\count144
-\l__regex_group_level_int=\count145
-\l__regex_mode_int=\count146
-\c__regex_cs_in_class_mode_int=\count147
-\c__regex_cs_mode_int=\count148
-\l__regex_catcodes_int=\count149
-\l__regex_default_catcodes_int=\count150
-\c__regex_catcode_D_int=\count151
-\c__regex_catcode_S_int=\count152
-\c__regex_catcode_L_int=\count153
-\c__regex_catcode_O_int=\count154
-\c__regex_catcode_A_int=\count155
-\c__regex_all_catcodes_int=\count156
-\l__regex_show_lines_int=\count157
-\l__regex_min_state_int=\count158
-\l__regex_max_state_int=\count159
-\l__regex_left_state_int=\count160
-\l__regex_right_state_int=\count161
-\l__regex_capturing_group_int=\count162
-\l__regex_min_pos_int=\count163
-\l__regex_max_pos_int=\count164
-\l__regex_curr_pos_int=\count165
-\l__regex_start_pos_int=\count166
-\l__regex_success_pos_int=\count167
-\l__regex_curr_char_int=\count168
-\l__regex_curr_catcode_int=\count169
-\l__regex_last_char_int=\count170
-\l__regex_case_changed_char_int=\count171
-\l__regex_curr_state_int=\count172
-\l__regex_step_int=\count173
-\l__regex_min_active_int=\count174
-\l__regex_max_active_int=\count175
-\l__regex_replacement_csnames_int=\count176
-\l__regex_match_count_int=\count177
-\l__regex_min_submatch_int=\count178
-\l__regex_submatch_int=\count179
-\l__regex_zeroth_submatch_int=\count180
-\g__regex_trace_regex_int=\count181
+\g__intarray_font_int=\count114
+\c__fp_leading_shift_int=\count115
+\c__fp_middle_shift_int=\count116
+\c__fp_trailing_shift_int=\count117
+\c__fp_big_leading_shift_int=\count118
+\c__fp_big_middle_shift_int=\count119
+\c__fp_big_trailing_shift_int=\count120
+\c__fp_Bigg_leading_shift_int=\count121
+\c__fp_Bigg_middle_shift_int=\count122
+\c__fp_Bigg_trailing_shift_int=\count123
+\c__kernel_randint_max_int=\count124
+\g__fp_array_int=\count125
+\l__fp_array_loop_int=\count126
+\l__sort_length_int=\count127
+\l__sort_min_int=\count128
+\l__sort_top_int=\count129
+\l__sort_max_int=\count130
+\l__sort_true_max_int=\count131
+\l__sort_block_int=\count132
+\l__sort_begin_int=\count133
+\l__sort_end_int=\count134
+\l__sort_A_int=\count135
+\l__sort_B_int=\count136
+\l__sort_C_int=\count137
+\l__tl_analysis_normal_int=\count138
+\l__tl_analysis_index_int=\count139
+\l__tl_analysis_nesting_int=\count140
+\l__tl_analysis_type_int=\count141
+\l__regex_internal_a_int=\count142
+\l__regex_internal_b_int=\count143
+\l__regex_internal_c_int=\count144
+\l__regex_balance_int=\count145
+\l__regex_group_level_int=\count146
+\l__regex_mode_int=\count147
+\c__regex_cs_in_class_mode_int=\count148
+\c__regex_cs_mode_int=\count149
+\l__regex_catcodes_int=\count150
+\l__regex_default_catcodes_int=\count151
+\c__regex_catcode_D_int=\count152
+\c__regex_catcode_S_int=\count153
+\c__regex_catcode_L_int=\count154
+\c__regex_catcode_O_int=\count155
+\c__regex_catcode_A_int=\count156
+\c__regex_all_catcodes_int=\count157
+\l__regex_show_lines_int=\count158
+\l__regex_min_state_int=\count159
+\l__regex_max_state_int=\count160
+\l__regex_left_state_int=\count161
+\l__regex_right_state_int=\count162
+\l__regex_capturing_group_int=\count163
+\l__regex_min_pos_int=\count164
+\l__regex_max_pos_int=\count165
+\l__regex_curr_pos_int=\count166
+\l__regex_start_pos_int=\count167
+\l__regex_success_pos_int=\count168
+\l__regex_curr_char_int=\count169
+\l__regex_curr_catcode_int=\count170
+\l__regex_last_char_int=\count171
+\l__regex_case_changed_char_int=\count172
+\l__regex_curr_state_int=\count173
+\l__regex_step_int=\count174
+\l__regex_min_active_int=\count175
+\l__regex_max_active_int=\count176
+\l__regex_replacement_csnames_int=\count177
+\l__regex_match_count_int=\count178
+\l__regex_min_submatch_int=\count179
+\l__regex_submatch_int=\count180
+\l__regex_zeroth_submatch_int=\count181
+\g__regex_trace_regex_int=\count182
 \c_empty_box=\box29
 \l_tmpa_box=\box30
 \l_tmpb_box=\box31
@@ -254,59 +255,65 @@ Package: expl3 2019-03-05 L3 programming layer (code)
 \l__coffin_display_x_dim=\dimen142
 \l__coffin_display_y_dim=\dimen143
 \g__file_internal_ior=\read1
-\l__seq_internal_a_int=\count182
-\l__seq_internal_b_int=\count183
-\c__deprecation_minus_one=\count184
+\l__seq_internal_a_int=\count183
+\l__seq_internal_b_int=\count184
+\c__deprecation_minus_one=\count185
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/l3kernel\l3dvips.def"
-File: l3dvips.def 2019-03-05 v L3 Experimental driver: dvips
-\g__driver_pdf_object_int=\count185
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/l3kernel\l3dvips.def"
+File: l3dvips.def 2019-04-06 v L3 Experimental driver: dvips
+\l__driver_internal_box=\box47
+\g__driver_pdf_object_int=\count186
+\l__driver_pdf_content_box=\box48
+\l__driver_pdf_model_box=\box49
+\g__driver_pdf_annotation_int=\count187
+\g__driver_pdf_link_int=\count188
+\g__driver_pdf_link_sf_int=\count189
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/l3packages/xparse\xparse.sty"
-Package: xparse 2019-03-05 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count186
-\g__xparse_grabber_int=\count187
-\l__xparse_m_args_int=\count188
-\l__xparse_v_nesting_int=\count189
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/l3packages/xparse\xparse.sty"
+Package: xparse 2019-05-03 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count190
+\g__xparse_grabber_int=\count191
+\l__xparse_m_args_int=\count192
+\l__xparse_v_nesting_int=\count193
 )
 Package: siunitx 2018/05/17 v2.7s A comprehensive (SI) units package
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\array.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/tools\array.sty"
 Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 \col@sep=\dimen144
-\ar@mcellbox=\box47
+\ar@mcellbox=\box50
 \extrarowheight=\dimen145
 \NC@list=\toks19
 \extratabsurround=\skip52
 \backup@length=\skip53
-\ar@cellbox=\box48
+\ar@cellbox=\box51
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/l3packages/l3keys2e\l3keys2e.sty"
-Package: l3keys2e 2019-03-05 LaTeX2e option processing using LaTeX3 keys
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/l3packages/l3keys2e\l3keys2e.sty"
+Package: l3keys2e 2019-05-03 LaTeX2e option processing using LaTeX3 keys
 )
-\l__siunitx_tmp_box=\box49
+\l__siunitx_tmp_box=\box52
 \l__siunitx_tmp_dim=\dimen146
-\l__siunitx_tmp_int=\count190
-\l__siunitx_number_mantissa_length_int=\count191
-\l__siunitx_number_uncert_length_int=\count192
-\l__siunitx_round_int=\count193
-\l__siunitx_process_decimal_int=\count194
-\l__siunitx_process_uncertainty_int=\count195
-\l__siunitx_process_fixed_int=\count196
-\l__siunitx_process_integer_min_int=\count197
-\l__siunitx_process_precision_int=\count198
-\l__siunitx_group_min_int=\count199
-\l__siunitx_angle_marker_box=\box50
-\l__siunitx_angle_unit_box=\box51
+\l__siunitx_tmp_int=\count194
+\l__siunitx_number_mantissa_length_int=\count195
+\l__siunitx_number_uncert_length_int=\count196
+\l__siunitx_round_int=\count197
+\l__siunitx_process_decimal_int=\count198
+\l__siunitx_process_uncertainty_int=\count199
+\l__siunitx_process_fixed_int=\count266
+\l__siunitx_process_integer_min_int=\count267
+\l__siunitx_process_precision_int=\count268
+\l__siunitx_group_min_int=\count269
+\l__siunitx_angle_marker_box=\box53
+\l__siunitx_angle_unit_box=\box54
 \l__siunitx_angle_marker_dim=\dimen147
 \l__siunitx_angle_unit_dim=\dimen148
-\l__siunitx_unit_int=\count266
-\l__siunitx_unit_denominator_int=\count267
-\l__siunitx_unit_numerator_int=\count268
-\l__siunitx_unit_prefix_int=\count269
-\l__siunitx_unit_prefix_base_int=\count270
-\l__siunitx_unit_prefix_gram_int=\count271
-\l__siunitx_number_product_int=\count272
+\l__siunitx_unit_int=\count270
+\l__siunitx_unit_denominator_int=\count271
+\l__siunitx_unit_numerator_int=\count272
+\l__siunitx_unit_prefix_int=\count273
+\l__siunitx_unit_prefix_base_int=\count274
+\l__siunitx_unit_prefix_gram_int=\count275
+\l__siunitx_number_product_int=\count276
 \c__siunitx_one_fill_skip=\skip54
 \l__siunitx_table_unit_align_skip=\skip55
 \l__siunitx_table_exponent_dim=\dimen149
@@ -318,17 +325,16 @@ Package: l3keys2e 2019-03-05 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_table_fill_pre_dim=\dimen155
 \l__siunitx_table_fill_post_dim=\dimen156
 \l__siunitx_table_fill_mid_dim=\dimen157
-\l__siunitx_table_pre_box=\box52
-\l__siunitx_table_post_box=\box53
-\l__siunitx_table_mantissa_box=\box54
-\l__siunitx_table_result_box=\box55
+\l__siunitx_table_pre_box=\box55
+\l__siunitx_table_post_box=\box56
+\l__siunitx_table_mantissa_box=\box57
+\l__siunitx_table_result_box=\box58
 \l__siunitx_table_number_align_skip=\skip56
 \l__siunitx_table_text_align_skip=\skip57
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/translator\translator.sty"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/translator\translator.sty"
 Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
 )))
@@ -349,7 +355,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
- ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1enc.dfu"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/base\ts1enc.dfu"
 File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -422,23 +428,23 @@ File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
    defining Unicode char U+266A (decimal 9834)
    defining Unicode char U+FEFF (decimal 65279)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/translator\translator-basic-dictionary-
-English.dict"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/translator\translator-basic-dicti
+onary-English.dict"
 Dictionary: translator-basic-dictionary, Language: English 
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/siunitx\siunitx-abbreviations.cfg"
+("C:\Program Files (x86)\MiKTeX 2.9\tex/latex/siunitx\siunitx-abbreviations.cfg
+"
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
-)
-[1
+) [1
 
 ] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] (texpreamble.aux) ) 
 Here is how much of TeX's memory you used:
- 13144 strings out of 492946
- 268746 string characters out of 3135536
- 278039 words of memory out of 3000000
- 17035 multiletter control sequences out of 15000+200000
+ 13228 strings out of 492946
+ 271082 string characters out of 3135536
+ 286106 words of memory out of 3000000
+ 17118 multiletter control sequences out of 15000+200000
  536292 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,5n,63p,224b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on texpreamble.dvi (11 pages, 3308 bytes).
+Output written on texpreamble.dvi (11 pages, 9056 bytes).

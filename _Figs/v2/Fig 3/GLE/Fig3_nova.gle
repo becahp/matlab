@@ -1,0 +1,92 @@
+include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 1.0 0.78
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+set hei text_height
+
+amove 0.4 0.1
+
+begin graph
+	nobox 
+	!fullsize
+
+	!c1= V_g, c2= I_s
+	data ../Data/Fig_d1.elpa ignore 2 d1=c1,c2	
+	data ../Data/Fig_d2.elpa ignore 2 d2=c1,c2	
+	data ../Data/Fig_d3.elpa ignore 2 d3=c1,c2	
+	
+	data ../Data/Fig_d4.elpa ignore 2 d4=c1,c2	
+	data ../Data/Fig_d5.elpa ignore 2 d5=c1,c2	
+	data ../Data/Fig_d6.elpa ignore 2 d6=c1,c2	
+		
+	
+	d1 line lwidth 0.030000 lstyle 1  color cfaedblue1$ !rgb(0,0,1)
+	!d2 line lwidth 0.030000 lstyle 1  color cfaedgreen2$ !rgb(0,0,1)
+    d3 line lwidth 0.030000 lstyle 1  color cfaedred$!rgb(0,0.5,0)
+	
+	d4 line lwidth 0.030000 lstyle 1  color cfaedblue1$ !rgb(0,0,1)
+	!d5 line lwidth 0.030000 lstyle 22  color cfaedgreen2$ !rgb(0,0,1)
+	d6 line lwidth 0.030000 lstyle 1  color cfaedred$ !rgb(0,0,1)
+    !d7 line lwidth 0.030000 lstyle 22  color cfaedgreen1$!rgb(0,0.5,0)
+	!d8 line lwidth 0.030000 lstyle 22  color cfaedgreen2$!rgb(1,0,0)
+	
+	
+	xlabels dist 0.1
+	ylabels dist 0.05 !hei 0.6*text_height
+	xaxis lin min 0 max 1 dticks 0.5
+	yaxis log min 1e-17 max 1e-4 dticks 2
+	yaxis format "sci 0 10 expdigits 2 expsign"
+	xtitle "$V_{\rm GS}\,/\,\si{\volt}$" adist 0.4
+	ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.95 !hei 0.8*text_height
+	
+!legend({'vpg = |0.6|V','vpg = |0.8|V', 'vpg = |1.0|V'}, 'Location', 'best');
+!xlabel('V_{gs} (V)')
+!ylabel('I_{ds} (A)')
+!axis([0 1 1E-17 1e-4])
+
+end graph
+begin key
+    nobox
+    compact
+    position br
+    offset 0.01 0.35 !0.01 0.1
+    hei 0.6*text_height
+    llen 0.4
+	text  "$V_{\rm PG}=\lvert \SI{0.6}{\volt}\rvert$" line lwidth 0.030000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
+    !text  "$V_{\rm PG}=\lvert \SI{0.8}{\volt}\rvert$" line lwidth 0.030000 lstyle 1 color cfaedgreen2$!rgb(0.75,0,0.75) 
+    text  "$V_{\rm PG}=\lvert \SI{1.0}{\volt}\rvert$" line lwidth 0.030000 lstyle 1 color cfaedred$!rgb(0.75,0,0.75) 
+end key
+
+!------------------------------Texto
+set color black
+set hei 0.6*text_height
+amove xg(0.25) yg(4e-6)
+circle 0.2
+rmove +0.2 -0.3
+tex "HP"
+
+amove xg(0.5) yg(2e-9)
+circle 0.3
+rmove +0.3 -0.3
+tex "LP"
+
+!------------------------------Setas
+amove xg(0.97) yg(1.25e-7)
+aline xg(0.97) yg(7.5e-6) arrow end
+rmove -0.75 -0.35
+tex "$\mp V_{\rm PG}$"
+
+amove xg(0.04) yg(8e-8)
+aline xg(0.04) yg(7e-15) arrow end
+rmove +0.05 +1.1
+tex "$\pm V_{\rm PG}$"
+
+
+amove xg(0.275) yg(1e-12)
+aline xg(0.09) yg(1e-12) arrow end
+rmove +0.8 -0.1
+tex "$\lvert V_{\rm PG} \rvert \uparrow$"
+

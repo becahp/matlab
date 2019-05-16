@@ -5,14 +5,14 @@ set_fig_size 1.0 0.78
 include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
 include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
 
-set hei text_height
+!set hei text_height
 
-amove 0.4 0.1
+amove 0.5 0.3
 
 
 begin graph
    nobox 
-   !fullsize
+   scale 0.75 0.75, noborder !fullsize
 
    !c1= V_g, c2= I_s
    data ../Data/Fig6a_d1.elpa ignore 2 d1=c1,c2
@@ -34,12 +34,12 @@ begin graph
 
 
 	xlabels dist 0.1
-	ylabels dist 0.05 !hei 0.6*text_height
+	ylabels dist 0.1 !hei 0.6*text_height
 	xaxis lin min -1 max 1 dticks 0.5
 	yaxis log min 1e-10 max 1e-4 dticks 2
 	yaxis format "sci 0 10 expdigits 2 expsign"
 	xtitle "$V_{\rm PG}\,/\,\si{\volt}$" adist 0.4 
-	ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 0.95 !hei 0.8*text_height
+	ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 1.05 !hei 0.8*text_height
 
 
 end graph
@@ -76,7 +76,7 @@ tex "NC"
 !set color gray
 set color rgba255(192,192,192,20)
 amove xg(-0.49) yg(5.5e-5)
-box  1.46 -2.81 fill rgba255(192,192,192,70)
+box 1.55 -2.9 fill rgba255(192,192,192,70)
 
 
 !------------------------------Texto

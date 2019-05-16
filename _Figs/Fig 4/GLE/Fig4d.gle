@@ -13,7 +13,7 @@ amove 0.4 0.2
 
 begin graph
 	nobox 
-	!fullsize
+	scale 0.7 0.7, noborder !fullsize
 
 	!c1= V_g, c2= I_s
 	data ../Data/Fig4_d4.elpa ignore 2 d1=c1,c2
@@ -23,18 +23,18 @@ begin graph
 	
 	
 	
-	xlabels dist 0.02 hei 0.6*text_height
-    ylabels dist 0.02 hei 0.6*text_height
+	xlabels dist 0.05 !hei 0.6*text_height
+    ylabels dist 0.01 hei 0.6*text_height
     xaxis lin min -1.0 max 1.0 dticks 1
     yaxis lin min 2e5 max 4e7 nticks 4 !dticks 1
     yaxis format "sci 1 10" ! expdigits 2 expsign"
     
-	xtitle "$V_{\rm BG}\,/\,\si{\volt}$" hei 0.6*text_height !adist 0.32
-    ytitle "$I_{\rm on}/I_{\rm off}$" adist 0.7 hei 0.6*text_height
+	xtitle "$V_{\rm BG}\,/\,\si{\volt}$" adist 0.27 !hei 0.6*text_height !adist 0.32
+    ytitle "$I_{\rm on}/I_{\rm off}$" adist 0.68 !hei 0.6*text_height
    
 end graph
 
 set color black
-set hei 0.6*text_height
+!set hei 0.6*text_height
 amove xg(-0.85) yg(2.8e7)
 tex "LP"

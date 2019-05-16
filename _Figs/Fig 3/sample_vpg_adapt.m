@@ -176,14 +176,14 @@ legend('boxoff')
 
 print('vpg_adapt','-depsc')
 
-pule = 0
+pule = 1
 if pule == 1
-for i=1:length(op2)
+for i=4:5 %apenas adapt
 str = num2str(i);
 
 elp.mat=[op2(i).V_g,op2(i).I_d];
 elp.var_names={'Vg','Id'};
-s = strcat('Fig_d',str);
+s = strcat('FigAdpt_d',str);
 elp.title=s;
 
 save_elpa(['Data/',elp.title,'.elpa'],elp)

@@ -1,0 +1,58 @@
+include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 1.0 0.78
+include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+!set hei text_height
+
+amove 0.5 0.3
+begin graph
+	nobox 
+	scale 0.75 0.75, noborder !fullsize
+
+	!c1= V_g, c2= I_s
+	data ../Data/FigAdpt_d4.elpa ignore 2 d1=c1,c2	
+	data ../Data/FigAdpt_d5.elpa ignore 2 d3=c1,c2	
+	
+	!data ../Data/Fig3_d3.elpa ignore 2 d4=c1,c2	
+	!data ../Data/Fig3_d4.elpa ignore 2 d6=c1,c2	
+		
+	
+	d1 line lwidth 0.030000 lstyle 1  color cfaedblue1$ !rgb(0,0,1)
+	!d2 line lwidth 0.030000 lstyle 1  color cfaedgreen2$ !rgb(0,0,1)
+    d3 line lwidth 0.030000 lstyle 1  color cfaedred$!rgb(0,0.5,0)
+	
+	!d4 line lwidth 0.030000 lstyle 1  color cfaedblue1$ !rgb(0,0,1)
+	!d5 line lwidth 0.030000 lstyle 22  color cfaedgreen2$ !rgb(0,0,1)
+	!d6 line lwidth 0.030000 lstyle 1  color cfaedred$ !rgb(0,0,1)
+    !d7 line lwidth 0.030000 lstyle 22  color cfaedgreen1$!rgb(0,0.5,0)
+	!d8 line lwidth 0.030000 lstyle 22  color cfaedgreen2$!rgb(1,0,0)
+	
+	
+	xlabels dist 0.1
+	ylabels dist 0.1 !hei 0.6*text_height
+	xaxis lin min 0 max 0.5 dticks 0.25
+	yaxis log min 1e-16 max 1e-4 dticks 2
+	yaxis format "sci 0 10 expdigits 2 expsign"
+	xtitle "$V_{\rm GS}$,$V_{\rm PG}=4V_{\rm GS}-\SI{1}{\volt}\,/\,\si{\volt}$" adist 0.4
+	ytitle "$I_{\rm D}\,/\, \si{\ampere}$" adist 1.05 !hei 0.8*text_height
+	
+!legend({'vpg = |0.6|V','vpg = |0.8|V', 'vpg = |1.0|V'}, 'Location', 'best');
+!xlabel('V_{gs} (V)')
+!ylabel('I_{ds} (A)')
+!axis([0 1 1E-17 1e-4])
+
+end graph
+begin key
+    nobox
+    compact
+    position br
+    offset 0.01 0.35 !0.01 0.1
+    hei 0.6*text_height
+    llen 0.4
+	text  "$V_{\rm BG}=\SI{0}{\volt}$" line lwidth 0.030000 lstyle 1 color cfaedblue1$!rgb(0,0.5,0)
+    !text  "$V_{\rm PG}=\lvert \SI{0.8}{\volt}\rvert$" line lwidth 0.030000 lstyle 1 color cfaedgreen2$!rgb(0.75,0,0.75) 
+    text  "$V_{\rm BG}=\SI{1.0}{\volt}$" line lwidth 0.030000 lstyle 1 color cfaedred$!rgb(0.75,0,0.75) 
+end key
