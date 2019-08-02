@@ -39,8 +39,8 @@ plot(op2(i).V_d(indice(1).b),f2,'k--');
 plot(op2(i).V_d(indice(1).c),f3,'k--');
 hold off
 
-%print('FIG', '-depsc');
-%pause 
+print('FIG', '-depsc');
+pause 
 
 %res(i) = 1/p(i);
 soma = (p(1,1) + p(2,1) + p(3,1)) / segmentos

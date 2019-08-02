@@ -50,7 +50,7 @@ addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET\02_PGD_var\03_spacer_n\nHP_sp
 %%
 %%%Read data and store it in a struct
 op2 = [];	
-aux = 1
+aux = 3
 %%%%%%%%%
 
 if aux == 1
@@ -88,3 +88,6 @@ axis([0 129 01e-3 1e10])
 
 legend({'electron','holes'},'Location', 'best'); 
 legend('boxoff')
+
+
+print('fig','-depsc')

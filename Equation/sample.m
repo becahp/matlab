@@ -43,7 +43,7 @@ aux = 1;
 
 addpath C:\Users\becahp\UnB\Artigo\Simulacoes\TFET\04_hipotese\07_backgate_sp\nHP_BG_000_25
 if aux == 1
-op2 =  rdcelpa('nHP_BG_000_25_op1_dd_inqu.elpa','*',[],op2);	%1 V
+op2 =  rdcelpa('nHP_BG_000_25_op1_dd_.inquelpa','*',[],op2);	%1 V
 
 end
 
@@ -88,7 +88,7 @@ h(1) = plot(op2(1).x,op2(1).psi_semi);
 xlabel('x (nm)')
 ylabel('\Psi_{semi}')
 
-%print('BG_ox_sp_25_psi_semi', '-depsc')
+print('BG_ox_sp_25_psi_semi', '-depsc')
 
 end
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %

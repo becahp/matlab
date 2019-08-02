@@ -158,6 +158,7 @@ legend('V_g', '\psi_{semi}', 'Location', 'best');
 
 figure
 h(1) = semilogy(op2(1).V_g, testeQs);
+end
 
 %--------------------------------------------------------------------------------figura certa
 figure
@@ -170,7 +171,7 @@ ylabel('I_d (A)')
 xlim([0 0.5])
 legend('TFET', 'NCTFET with FE layer', 'Location', 'best');
 legend('boxoff')
-end
+
 
 [Vg_nLP_FE,Vg_nLP,Id_nLP] = funcao_nLP(alpha_eps);
 
