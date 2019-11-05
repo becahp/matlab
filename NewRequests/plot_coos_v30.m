@@ -8,6 +8,7 @@ addpath F:\UnB_Mestrado\Artigo_tfet\Simulacoes\TFET2\02_otimizacao\04_tbox\nLP_t
 % 3G RFET:
 addpath F:\UnB_Mestrado\Artigo\Simulacoes\_07v30\02_dia16\n_dir_3g
 addpath F:\UnB_Mestrado\Artigo\Simulacoes\_07v30\02_dia16\p_dir_3g_v1
+addpath F:\UnB_Mestrado\Artigo\Simulacoes\_07v30\02_dia16\p_esq_3g_v1
 
 %% padrao
 clear;
@@ -69,8 +70,11 @@ h=figure;
 %[A,a,fl] = readELPA('n_dir_3g/n_dir_3g_op1_dd_inqu.elpa'); % (VGS,VDS) = (0V,+1V)	   % off
 
 %+ VPGD=VPGS=-1.2V (p-type): (VGS,VDS) = (-1.2V,-1V) (estado on) e (0V,-1V) (estado off)
-%[A,a,fl] = readELPA('p_dir_3g_v1/p_dir_3g_v1_op19_dd_inqu.elpa'); %(VGS,VDS) = (-1.2V,-1V) %on
-[A,a,fl] = readELPA('p_dir_3g_v1/p_dir_3g_v1_op1_dd_inqu.elpa'); %(VGS,VDS) = (0V,-1V)  %off
+%[A,a,fl] = readELPA('p_dir_3g_v1/p_dir_3g_v1_op19_dd_inqu.elpa'); %(VGS,VDS) = (-1.2V,-1V) %on ERRADO
+%[A,a,fl] = readELPA('p_esq_3g_v1/p_esq_3g_v1_op19_dd_inqu.elpa'); %(VGS,VDS) = (-1.2V,-1V) %on CORRETO
+%[A,a,fl] = readELPA('p_dir_3g_v1/p_dir_3g_v1_op1_dd_inqu.elpa'); %(VGS,VDS) = (0V,-1V)  %off 
+[A,a,fl] = readELPA('p_esq_3g_v1/p_esq_3g_v1_op1_dd_inqu.elpa'); %(VGS,VDS) = (0V,-1V)  %off 
+
 
 
 
