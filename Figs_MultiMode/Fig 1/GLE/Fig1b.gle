@@ -1,10 +1,10 @@
-include "C:/Users/becahp/UnB/GLE/gle_sources/shape.gle"
-include "C:/Users/becahp/UnB/GLE/gle_sources/griddef.gle"
-include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper_size.gle"
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/tpl_paper_size.gle"
 set_fig_size 1.0 0.78
 !set_fig_size 0.5 0.72
-include "C:/Users/becahp/UnB/GLE/gle_sources/tpl_paper.gle"
-include "C:/Users/becahp/UnB/GLE/gle_sources/cfaedcolors.gle"
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/cfaedcolors.gle"
 
 !set hei 0.8*text_height
 !amove 0.4 0.2

@@ -1,0 +1,63 @@
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/shape.gle"
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/griddef.gle"
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/tpl_paper_size.gle"
+set_fig_size 0.5 0.78
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/tpl_paper.gle"
+include "C:/Users/Rebeca/UnB/GLE/gle_sources/cfaedcolors.gle"
+
+set hei 0.8*text_height
+x_add = 10	! ajuste de x para desenhar linhas auxiliares
+
+!amove 0.4 0.2
+amove 0.3 0.
+
+begin graph
+	nobox 
+	scale 0.7 0.7, noborder !fullsize
+
+	!c1= x, c2= cb1, c3= qfn, c4= vb1, c5= qfp
+	data ../Data/LP_0V_05V_-1V.elpa ignore 2 d1=c1,c2 d2=c1,c3 d3=c1,c4 d4=c1,c5
+
+	d1 line lwidth 0.02 lstyle 1 color cfaedblue1$!rgb(0,0,1) !key  "\textsc{conduction band}" !
+	d2 line lwidth 0.02 lstyle 3 color cfaedblue1$!rgb(0,0,1) !key  "\textsc{ quasi Fermi level electrons}" !   
+	d3 line lwidth 0.02 lstyle 1 color cfaedgreen1$!rgb(0,0.5,0)  !key  "\textsc{valence band}" !
+	d4 line lwidth 0.02 lstyle 3  color cfaedgreen1$!rgb(0,0.5,0) !key  "\textsc{quasi Fermi level holes}" !
+
+	d5 file ../Data/d5.txt line lwidth 0.030000 lstyle 1  !color rgb(0,0,1) !fermi level
+	d6 file ../Data/d6.txt line lwidth 0.030000 lstyle 1  !color rgb(0,0,1) !fermi level
+	d7 file ../Data/d7.txt line lwidth 0.020000 lstyle 33 !color rgb(0,0,0) !linha vertical
+	d8 file ../Data/d8.txt line lwidth 0.020000 lstyle 33 !color rgb(0,0,0) !linha vertical
+
+
+	!key off nobox compact position tr  hei 0.3633 offset 0. 0.
+
+	xlabels dist 0.05
+	ylabels dist 0.05
+	xaxis lin min 0.000000e+00 max 1.1900e+02+x_add dticks 40
+	yaxis lin min -1.7 max 1.0 !dticks 0.6
+	!yaxis lin min -1.7 max 0.7 !dticks 0.6
+	xtitle "$x\,/\,\si{\nano\meter}$" adist 0.3
+	ytitle "$E\,/\,\si{\eV}$" adist 0.580000
+   
+end graph
+
+set color cfaedblue1$
+amove xg(20) yg(0.35)
+tex "$E_{\rm c}$"
+amove xg(30) yg(-0.35)
+tex "$\varphi_{\rm n}$"
+
+set color cfaedgreen1$
+amove xg(75) yg(-0.95)
+tex "$E_{\rm v}$"
+amove xg(75) yg(-0.25)
+tex "$\varphi_{\rm p}$"
+
+
+set just tc
+set hei 0.6*text_height
+set color cfaedblue1$
+amove xg(65) yg(-1.15)
+!tex "mmFET"
+!rmove 0 -0.2
+tex "(\SI{0.5}{\volt},\SI{-1}{\volt})"
